@@ -1,20 +1,15 @@
 package com.s162041.Forsale.entity;
 
-/**
- * 162041班 第2组
- * 校园二手交易平台——XXX模块
- *
- * @author: 张侃
- * date: 2019/6/2
- * 主要功能说明 ……
- */
 public class LoginAdmin {
+    private String AID;
     private String Aname;
     private String Apassword;
+    private String Atel;
+    private String Apicture;
 
-    public LoginAdmin(String Aname, String Apassword) {
-        this.Aname = Aname;
-        this.Apassword = Apassword;
+    public LoginAdmin(String aname, String apassword) {
+        Aname = aname;
+        Apassword = apassword;
     }
 
     public LoginAdmin() {
@@ -34,5 +29,29 @@ public class LoginAdmin {
 
     public void setApassword(String Apassword) {
         this.Apassword = Apassword;
+    }
+
+    public String getAtel() {
+        return Atel;
+    }
+
+    public void setAtel(String atel) {
+        Atel = atel;
+    }
+
+    public String getApicture() {
+        return Apicture;
+    }
+
+    public void setApicture(String apicture) {
+        Apicture = apicture;
+    }
+
+    public String getAID() {
+        return AID;
+    }
+
+    public void setAID(String AID) {
+        this.AID = AID;
     }
 }
