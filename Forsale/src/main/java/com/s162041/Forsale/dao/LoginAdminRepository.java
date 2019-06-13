@@ -13,11 +13,11 @@ import java.util.List;
 public class LoginAdminRepository {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
-	
+	private RowMapper<LoginAdmin> rowMapper=new BeanPropertyRowMapper<LoginAdmin>(LoginAdmin.class);
+	private List<LoginAdmin> list;
 	public LoginAdmin getLoginAdmin(String account, String password) {
 		String sql="select * from admin where Aname=? and Apassword=?";
-		RowMapper<LoginAdmin> rowMapper=new BeanPropertyRowMapper<LoginAdmin>(LoginAdmin.class);
-		List<LoginAdmin> list = jdbcTemplate.query(sql, rowMapper,account,password);
+		list = jdbcTemplate.query(sql, rowMapper,account,password);
 		if (list != null && list.size()>0) {
 			System.out.println(list.get(0).getAname());
 			return list.get(0);
@@ -25,7 +25,7 @@ public class LoginAdminRepository {
 			return null;				
 	}
 	public void setLoginAdmin(String AID ,String Aname,String Atel){
-		String sql= "update admin set Aname='Aname',Atel='Atel' where AID='AID'";
-		jdbcTemplate.update(sql);
+		String sql= "update admin set Aname=?,Atel=? where AID=?";
+		jdbcTemplate.update(sql,Aname,Atel,AID);
 	}
 }
