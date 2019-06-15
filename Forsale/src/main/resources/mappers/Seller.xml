@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.s162041.Forsale.dao.UserDao">
+    <resultMap id="sellerMapper" type="Seller">
+        <id property="sid" column="SID"/>
+        <result property="sname" column="Sname"/>
+        <result property="spassword" column="Spassword"/>
+        <result property="stel" column="Stel"/>
+
+    </resultMap>
+
+    <select id="getSellerList" resultMap="sellerMapper" >
+        select * from seller
+    </select>
+
+</mapper>
