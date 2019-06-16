@@ -1,0 +1,15 @@
+public ServerResponse<PageInfo> manageList(int pageNum,int pageSize){
+? ?PageHelper.startPage(pageNum,pageSize);
+? ?List<Order> orderList = orderMapper.selectAllOrder();
+? ?List<OrderVo> orderVoList = this.assembleOrderVoList(orderList,null);
+? ?PageInfo pageResult = new PageInfo(orderList);
+? ?pageResult.setList(orderVoList);
+? ?return ServerResponse.createBySuccess(pageResult);
+}public ServerResponse<PageInfo> manageList(int pageNum,int pageSize){
+? ?PageHelper.startPage(pageNum,pageSize);
+? ?List<Order> orderList = orderMapper.selectAllOrder();
+? ?List<OrderVo> orderVoList = this.assembleOrderVoList(orderList,null);
+? ?PageInfo pageResult = new PageInfo(orderList);
+? ?pageResult.setList(orderVoList);
+? ?return ServerResponse.createBySuccess(pageResult);
+}
