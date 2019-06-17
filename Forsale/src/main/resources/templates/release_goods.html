@@ -1,14 +1,13 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title> 首页 </title>
+    
+    <title>发布商品</title>
 
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -16,16 +15,21 @@
     <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
     <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
-    
-    <!-- Custom styling plus plugins -->
+    <!-- iCheck -->
+    <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- bootstrap-wysiwyg -->
+    <link href="../vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+    <!-- Select2 -->
+    <link href="../vendors/select2/dist/css/select2.min.css" rel="stylesheet">
+    <!-- Switchery -->
+    <link href="../vendors/switchery/dist/switchery.min.css" rel="stylesheet">
+    <!-- starrr -->
+    <link href="../vendors/starrr/dist/starrr.css" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+    <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
-    <link href="jQueryAssets/jquery.ui.core.min.css" rel="stylesheet" type="text/css">
-    <link href="jQueryAssets/jquery.ui.theme.min.css" rel="stylesheet" type="text/css">
-    <link href="jQueryAssets/jquery.ui.slider.min.css" rel="stylesheet" type="text/css">
-    <link href="jQueryAssets/jquery.ui.button.min.css" rel="stylesheet" type="text/css">
-  <script src="jQueryAssets/jquery-1.11.1.min.js"></script>
-  <script src="jQueryAssets/jquery.ui-1.10.4.slider.min.js"></script>
-  <script src="jQueryAssets/jquery.ui-1.10.4.button.min.js"></script>
   </head>
 
   <body class="nav-md">
@@ -39,10 +43,10 @@
 
             <div class="clearfix"></div>
 
-            <!-- menu profile quick info -->
+             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">                
-				<a href="personal_information"> <img src="images/img.jpg" alt="..." class="img-circle profile_img"></a>
+        <a href="personal_information"> <img src="images/img.jpg" alt="..." class="img-circle profile_img"></a>
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
@@ -59,7 +63,7 @@
                 <h3>交易市场</h3>
                 <ul class="nav side-menu">
                   <li><a href="index"><i class="fa fa-home"></i>首页</a>
-                   
+
                   </li>
                   <li><a><i class="fa fa-female"></i> 服装与包市场 <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
@@ -116,12 +120,12 @@
                   </li>
                   <li><a><i class="fa fa-sitemap"></i> 我是卖家<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                        <li><a href="release_goods">发布商品</a></li>
-                        <li><a href="">已发布的商品</a></li>
-                        <li><a href="">已出售的商品</a>
-                        </li>
+                      <li><a href="release_goods">发布商品</a></li>
+                      <li><a href="">已发布的商品</a></li>
+                      <li><a href="">已出售的商品</a>
+                      </li>
                     </ul>
-                  </li>                  
+                  </li>
                   <li><a href=""><i class="fa fa-laptop"></i> 联系客服 <span class="label label-success pull-right">help</span></a></li>
                 </ul>
               </div>
@@ -175,110 +179,124 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>首页</h3>
+                <h3>发布商品</h3>
               </div>
 
-              <div class="title_right">
-                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                  <div class="input-group col-lg-8">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
+              <div class="title_right"> </div>
+            </div>
+            <div class="clearfix"></div>
+<div class="row">
+  <div class="col-md-6 col-xs-12 col-lg-offset-3">
+            <div class="x_panel">
+                  <div class="x_title">
+                    <h2>商品属性</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li> </li>
+                      <li class="dropdown">
+<ul class="dropdown-menu" role="menu">
+                      <li><a href="#">Settings 1</a>
+                      </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
                   </div>
-                </div>
+                  
+                    <br />
+                    <form class="form-horizontal form-label-left" action="release_goods" method="post" enctype="multipart/form-data">
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">商品标题</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12 col-lg-7">
+                          <input type="text" class="form-control" name="Gname" placeholder="">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">商品价格 </label><label class="control-label">元</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12 col-lg-2">
+                          <input type="text" class="form-control" name="Gprices" placeholder="">
+                        </div>
+                      </div>
+                      
+<div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">商品类型</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12 col-lg-5">
+                          <select class="select2_group form-control" name="Gtype">
+                            <optgroup label="服装" >
+                              <option value="男装" >男装</option>
+                              <option value="女装" >女装</option>
+							  <option value="男鞋" >男鞋</option>
+                              <option value="女鞋" >女鞋</option>
+                              <option value="女包" >女包</option>
+                            </optgroup>
+                            <optgroup label="手机数码">
+                              <option value="手机">手机</option>
+                              <option value="笔记本电脑">笔记本电脑</option>
+                              <option value="平板电脑">平板电脑</option>
+                              <option value="单反相机">单反相机</option>
+							  <option value="主机外设">主机外设</option>
+                            </optgroup>
+                            <optgroup label="书籍">
+                              <option value="小说">小说</option>
+                              <option value="教材">教材</option>
+                            </optgroup>
+                            <optgroup label="电器与代步工具">
+                              <option value="洗衣机">洗衣机</option>
+                              <option value="空调">空调</option>
+                              <option value="自行车">自行车</option>
+                              <option value="电动车">电动车</option>
+                            </optgroup>
+                            <optgroup label="运动器材">
+                              <option value="体育用品">体育用品</option>
+                              <option value="健身器材">健身器材</option>
+                            </optgroup>
+                          </select>
+                        </div>
+                      </div>
+						<div style="height: 150px" class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">商品图片 <span class="required"></span>
+                        </label>
+                         <input type="file" name="filename"/>
+                      </div>
+
+					<div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">商品描述 <span class="required"></span>
+                        </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12 col-lg-7">
+                          <textarea class="form-control" name="Gdescribe" rows="5" placeholder=""></textarea>
+                        </div>
+                      </div>
+					
+					<div class="form-group">
+                  <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+                          <button type="reset" class="btn btn-primary">重置</button>
+                          <button type="submit" class="btn btn-success">提交</button>
+                  </div>
+                      </div>
+
+                    </form>
+                  </div>
+           
               </div>
-				<div class="container">
-    <div class="row">
-      <div class="col-xs-10 col-sm-10 col-md-10 hidden-xs col-lg-6 col-lg-offset-3">
-        <div id="carousel-299058" class="carousel slide">
-          <ol class="carousel-indicators">
-            <li data-target="#carousel-299058" data-slide-to="0" > </li>
-			<li data-target="#carousel-299058" data-slide-to="1" > </li>
-          </ol>
-          <div class="carousel-inner">
-            <div class="item col-lg-offset-0"> <img style="width: 100%;height: 100%" class="img-responsive" src="images/主页.jpg" alt="thumb">
-              <div class="carousel-caption"> </div>
-            </div>
-            <div class="item active"> <img class="img-responsive" src="images/主页2.jpg" alt="thumb">
-              <div class="carousel-caption"> </div>
-            </div>
-			
-          </div>
-          <a class="left carousel-control" href="#carousel-299058" data-slide="prev"><span class="icon-prev"></span></a> <a class="right carousel-control" href="#carousel-299058" data-slide="next"><span class="icon-next"></span></a></div>
-      </div>
-	<div>
-		<div class="col-lg-2">
-		 <div style="height: 350px">
-		
-        <h3>二手头条</h3>
-        <hr>
-        <ul id="myTab1" class="nav nav-tabs">
-          <li class="active"> <a href="#home1" data-toggle="tab">公告</a> </li>
-          <li><a href="#pane2" data-toggle="tab">促销</a></li>
-        </ul>
-        <div id="myTabContent1" class="tab-content">
-          <div style="height: 50px" class="tab-pane fade in active" id="home1">
-            <h4 style="padding-left: 30px">买二手电脑需要注意什么？</h4>
-			<h4 style="padding-left: 30px">二手手机品质分级你知道吗？</h4>
-			
-          </div>
-          <div style="height: 50px" class="tab-pane fade" id="pane2">
-            <h4 style="padding-left: 30px">Iphone X 256G 低至5000 </h4>
-		    <h4 style="padding-left: 30px">惠普电脑半折促销 </h4>
+
+
+              <div class="col-md-6 col-sm-12 col-xs-12"> </div>
           </div>
 
-		</div>
-			
-		<div style="height: 120px;width: 250px;margin-top: 150px">
-			<img style="width: 100%;height: 100%" src="images/承诺.jpg" >
-		</div>
-		</div>
-		</div>
-	</div>
-    </div> 
-  </div>
-	<div style="width: 100%;height: 40px">
-	</div>
-	<div>
-		<h2 class="text-center">人  气  商  品</h2>
-		<div class="row text-center">
-    <div style="height: 300px" class="col-sm-4 col-md-4 col-xs-6 col-lg-2 col-lg-offset-1">
-      <div class="thumbnail"> <a href=""><img style="width: 100%;height: 100%" src="images/电脑/平板1.jpg" alt="Thumbnail Image 1" class="img-responsive"></a>
-       
-      </div>
-    </div>
-    <div class="col-sm-4 col-md-4 col-xs-6 col-lg-2">
-      <div class="thumbnail"><a href=""> <img style="width: 100%;height: 100%" src="images/手机/2.jpg" alt="Thumbnail Image 1" class="img-responsive"></a>
-       
-      </div>
-    </div>
-    <div class="col-sm-4 col-md-4 col-xs-6 col-lg-2">
-      <div class="thumbnail"> <a href=""><img style="width: 100%;height: 100%" src="images/手机/3.jpg" alt="Thumbnail Image 1" class="img-responsive"></a>      
-      </div>
-    </div>
-	<div class="col-sm-4 col-md-4 col-xs-6 col-lg-2">
-      <div class="thumbnail"> <a href=""><img style="width: 100%;height: 100%" src="images/冰箱.jpg" alt="Thumbnail Image 1" class="img-responsive"></a>
-       
-      </div>
-    </div>
-  <div class="col-sm-4 col-md-4 col-xs-6 col-lg-2">
-      <div class="thumbnail"> <a href=""><img style="width: 100%;height: 100%" src="images/手表.jpg" alt="Thumbnail Image 1" class="img-responsive"></a>
-       
-      </div>
-    </div>
-  </div>
-		<div class="row text-center"> </div>
-	</div>
-				
-		    </div>
-		</div>
+</div>
         </div>
         <!-- /page content -->
 
         <!-- footer content -->
         <footer>
-<div class="clearfix"></div>
+          <div class="pull-right">
+            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+          </div>
+          <div class="clearfix"></div>
         </footer>
         <!-- /footer content -->
       </div>
@@ -292,19 +310,33 @@
     <script src="../vendors/fastclick/lib/fastclick.js"></script>
     <!-- NProgress -->
     <script src="../vendors/nprogress/nprogress.js"></script>
-
+    <!-- bootstrap-progressbar -->
+    <script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <!-- iCheck -->
+    <script src="../vendors/iCheck/icheck.min.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="../vendors/moment/min/moment.min.js"></script>
+    <script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!-- bootstrap-wysiwyg -->
+    <script src="../vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+    <script src="../vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
+    <script src="../vendors/google-code-prettify/src/prettify.js"></script>
+    <!-- jQuery Tags Input -->
+    <script src="../vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
+    <!-- Switchery -->
+    <script src="../vendors/switchery/dist/switchery.min.js"></script>
+    <!-- Select2 -->
+    <script src="../vendors/select2/dist/js/select2.full.min.js"></script>
+    <!-- Parsley -->
+    <script src="../vendors/parsleyjs/dist/parsley.min.js"></script>
+    <!-- Autosize -->
+    <script src="../vendors/autosize/dist/autosize.min.js"></script>
+    <!-- jQuery autocomplete -->
+    <script src="../vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
+    <!-- starrr -->
+    <script src="../vendors/starrr/dist/starrr.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="../build/js/custom.min.js"></script>
-  <script type="text/javascript">
-$(function() {
-	$( "#Slider1" ).slider(); 
-});
-$(function() {
-	$( "#Button1" ).button(); 
-});
-$(function() {
-	$( "#Slider1" ).slider(); 
-});
-  </script>
+  
   </body>
 </html>
