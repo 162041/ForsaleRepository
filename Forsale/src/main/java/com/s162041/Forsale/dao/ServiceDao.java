@@ -14,4 +14,6 @@ import java.util.List;
  */
 public interface ServiceDao {
     List<Services> getServiceList();
+    int addService(Services services);
+    int deleteServiceById(String id);
 }

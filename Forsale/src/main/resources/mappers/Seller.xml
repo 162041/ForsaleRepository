@@ -13,4 +13,8 @@
         select * from seller
     </select>
 
+    <delete id="deleteSellerById" >
+        delete  from seller where sid=#{id}
+    </delete>
+
 </mapper>

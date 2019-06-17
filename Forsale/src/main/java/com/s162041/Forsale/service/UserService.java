@@ -29,4 +29,13 @@ public class UserService implements UserDao {
     public List<Seller> getSellerList() {
         return userDao.getSellerList();
     }
+
+    @Override
+    public int deleteBuyerById(String id) {
+        return userDao.deleteBuyerById(id);
+    }
+    @Override
+    public int deleteSellerById(String id) {
+        return userDao.deleteSellerById(id);
+    }
 }

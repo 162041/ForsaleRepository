@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.s162041.Forsale.dao.AdminDao">
+<mapper namespace="com.s162041.Forsale.dao.LoginASDao">
 
     <resultMap id="Admin" type="Admin">
         <id property="aid" column="AID"/>
@@ -10,8 +10,8 @@
         <result property="apicture" column="Apicture"/>
     </resultMap>
 
-    <update id="editAdmin">
-        update Admin set Aname=#{aname} ,Apassword=#{password},Atel=#{atel} where AID=#{aid}
-    </update>
+    <select id="getLoginAdmin" resultMap="Admin">
+        select * from admin where Aname=#{aname} and Apassword=#{apassword}
+    </select>
 
 </mapper>

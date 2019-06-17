@@ -8,6 +8,10 @@ public class Services {
   private String kpassword;
   private String kname;
 
+  public Services(String kpassword, String kname) {
+    this.kpassword = kpassword;
+    this.kname = kname;
+  }
 
   public String getKid() {
     return kid;

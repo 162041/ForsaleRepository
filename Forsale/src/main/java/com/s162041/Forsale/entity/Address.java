@@ -1,7 +1,6 @@
 package com.s162041.Forsale.entity;
 
 
-
 public class Address {
 
   private String pid;

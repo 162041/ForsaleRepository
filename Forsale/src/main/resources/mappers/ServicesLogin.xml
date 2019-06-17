@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.s162041.Forsale.dao.LoginASDao">
+
+    <resultMap id="Services" type="Services">
+        <id property="kid" column="KID"/>
+        <result property="kname" column="Kname"/>
+        <result property="kpassword" column="Kpassword"/>
+        <result property="ktel" column="Ktel"/>
+
+    </resultMap>
+
+    <select id="getLoginService" resultMap="Services">
+        select * from service where kname=#{kname} and kpassword=#{kpassword}
+    </select>
+
+</mapper>

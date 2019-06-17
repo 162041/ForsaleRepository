@@ -9,4 +9,6 @@ import java.util.List;
 public interface UserDao {
     List<Buyer> getBuyerList();
     List<Seller> getSellerList();
+    int deleteBuyerById(String id);
+    int deleteSellerById(String id);
 }

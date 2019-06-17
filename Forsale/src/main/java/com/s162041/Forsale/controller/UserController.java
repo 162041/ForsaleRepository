@@ -32,14 +32,16 @@ public class UserController {
         return mv;
     }
 
-    /*@RequestMapping("/service")
-    public ModelAndView getBuyerList(){
-        ModelAndView mv = new ModelAndView("service");
-        List<Seller> list=userService.getSellerList();
-        mv.addObject("userList",list);
-        return mv;
-    }*/
-
+    @RequestMapping("/deleteBuyerById")
+    public String deleteBuyerById(String id){
+       userService.deleteBuyerById(id);
+       return "redirect:/user/buyer";
+    }
+    @RequestMapping("/deleteSellerById")
+    public String deleteSellerById(String id){
+        userService.deleteSellerById(id);
+        return "redirect:/user/seller";
+    }
     /*@RequestMapping("/admin")
     public ModelAndView getAdminList(){
         ModelAndView mv = new ModelAndView("admin");

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.s162041.Forsale.dao.OrderDao">
+    <resultMap id="orderMapper" type="Order">
+        <id property="oid" column="OID"/>
+        <result property="ostate" column="Ostate"/>
+
+        <result property="gid" column="GID"/>
+        <result property="gprices" column="Gprices"/>
+        <result property="pstate" column="Pstate"/>
+        <result property="pid" column="PID"/>
+        <result property="sid" column="SID"/>
+        <result property="bid" column="BID"/>
+        <result property="odate" column="Odate"/>
+        <result property="gname" column="Gname"/>
+    </resultMap>
+
+    <select id="getOrderList" resultMap="orderMapper" >
+        select * from orders
+    </select>
+
+
+</mapper>

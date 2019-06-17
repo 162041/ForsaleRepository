@@ -12,5 +12,8 @@
     <select id="getBuyerList" resultMap="buyerMapper" >
         select * from buyer
     </select>
+    <delete id="deleteBuyerById" >
+        delete  from buyer where bid=#{id}
+    </delete>
 
 </mapper>

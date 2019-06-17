@@ -1,6 +1,7 @@
 package com.s162041.Forsale.controller;
 
 import com.s162041.Forsale.entity.Admin;
+import com.s162041.Forsale.entity.Services;
 import com.s162041.Forsale.service.LoginASService;
 import com.s162041.Forsale.util.ImageUtil;
 import org.springframework.stereotype.Controller;
@@ -25,15 +26,20 @@ import javax.servlet.http.HttpSession;
 public class LoginASController {
     @Resource
     private LoginASService loginAdminService;
-    @RequestMapping("login")
-    public String login(String aname, String apassword) {
+
+    /*
+    * 管理员登录请求
+    * */
+    @RequestMapping("Adminlogin")
+    public String Adminlogin(String aname, String apassword,HttpSession httpSession ) {
         try {
         Admin admin = loginAdminService.getLoginAdmin(new Admin(aname,apassword));
         System.out.println(aname+apassword);
         if(admin!=null){
-
+            httpSession.setAttribute("username", aname);
+            httpSession.setAttribute("password", apassword);
             System.out.println("成功");
-            return "main";
+            return "AdminMain";
         }
         else {
             System.out.println("账号密码不匹配");
@@ -46,6 +52,32 @@ public class LoginASController {
     }
 
 }
+    /*
+    * 客服登录请求
+    * */
+    @RequestMapping("ServiceLogin")
+    public String ServiceLogin(String kname, String kpassword ) {
+        try {
+            Services services = loginAdminService.getLoginService(new Services(kname,kpassword));
+            System.out.println(kname+kpassword);
+            if(services!=null){
+
+                System.out.println("成功");
+                return "ServiceMain";
+            }
+            else {
+                System.out.println("账号密码不匹配");
+                return "admin_service_login";
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+            e.printStackTrace();
+            System.out.println("用户名或密码错误!请重新登录");
+            return "admin_service_login";
+        }
+
+    }
+
     @GetMapping(value = "code")
     public String getCode(HttpServletRequest request, HttpServletResponse response) throws Exception{
         response.setContentType("image/jpeg");

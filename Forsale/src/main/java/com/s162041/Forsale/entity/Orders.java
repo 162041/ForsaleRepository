@@ -1,18 +1,19 @@
 package com.s162041.Forsale.entity;
 
 
-public class Order {
+import java.util.Date;
+
+public class Orders {
 
   private String oid;
   private String ostate;
-  private String kid;
-  private String aid;
   private String gid;
   private String gprices;
-  private String pid;
+  private String pstate;
   private String sid;
   private String bid;
-  private java.sql.Date odate;
+  private Date odate;
+  private String gname;
 
 
   public String getOid() {
@@ -30,24 +31,6 @@ public class Order {
 
   public void setOstate(String ostate) {
     this.ostate = ostate;
-  }
-
-
-  public String getKid() {
-    return kid;
-  }
-
-  public void setKid(String kid) {
-    this.kid = kid;
-  }
-
-
-  public String getAid() {
-    return aid;
-  }
-
-  public void setAid(String aid) {
-    this.aid = aid;
   }
 
 
@@ -69,12 +52,12 @@ public class Order {
   }
 
 
-  public String getPid() {
-    return pid;
+  public String getPstate() {
+    return pstate;
   }
 
-  public void setPid(String pid) {
-    this.pid = pid;
+  public void setPstate(String pstate) {
+    this.pstate = pstate;
   }
 
 
@@ -96,12 +79,20 @@ public class Order {
   }
 
 
-  public java.sql.Date getOdate() {
+  public Date getOdate() {
     return odate;
   }
 
-  public void setOdate(java.sql.Date odate) {
+  public void setOdate(Date odate) {
     this.odate = odate;
+  }
+
+  public String getGname() {
+    return gname;
+  }
+
+  public void setGname(String gname) {
+    this.gname = gname;
   }
 
 }
