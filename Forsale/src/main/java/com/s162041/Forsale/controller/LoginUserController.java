@@ -10,21 +10,23 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import java.io.File;
+import java.util.Date;
 import java.util.List;
 
 
 @Controller
 public class LoginUserController {
-    @Resource
+    @Autowired
     private LoginUserRepository loginUserDao;
     @Autowired
     private GoodsRepository goodsDao;
+    private List<Goods> goodsList;
     private LoginUser loginUser;
+    private Goods goods;
     //登陆界面
     @GetMapping("/")
     public String login(Model model){
@@ -68,7 +70,7 @@ public class LoginUserController {
     public String change_personal_information(Model model,String Bname,String Atel){
         loginUserDao.setLoginUser(loginUser.getBID(),Bname,Atel);
         //更新loginUser
-        loginUser = loginUserDao.getLoginUser(Bname,loginUser.getBpassword());
+        loginUser = loginUserDao.getLoginUser(Bname,loginUser.getBpassword( ));
         model.addAttribute("loginUser", loginUser);
         System.out.println(Bname +"#"+Atel+"#"+loginUser.getBname());
         return "personal_information";
@@ -91,14 +93,24 @@ public class LoginUserController {
         return "index2";
     }
     //分页商品
-    @RequestMapping("category_pages")
+    @GetMapping("category_pages")
     public String category_pages (Model model,String Gtype){
         System.out.println(Gtype);
         model.addAttribute("loginUser", loginUser);
-        List<Goods> goodsList=goodsDao.findByType(Gtype);
+        goodsList=goodsDao.findByType(Gtype);
         model.addAttribute("goodsList",goodsList);
-
         return "category_pages";
     }
-
+    //进入详细订单页面
+    @GetMapping("goods_details")
+    public String goods_details (Model model,String GID){
+        System.out.println(GID);
+        goods=goodsDao.findByGID(GID);
+//        java.util.Date date=new java.util.Date(goods.getGdate().getTime());
+//        System.out.println(date);
+        System.out.println(goods.getGname());
+        model.addAttribute("goods",goods);
+        model.addAttribute("loginUser", loginUser);
+        return "goods_details";
+    }
 }
