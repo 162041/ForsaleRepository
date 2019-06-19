@@ -163,33 +163,44 @@
 
         <!-- page content -->
       <div class="right_col" role="main">
-        <div>
-          <div class=>
-            <div style="height: 900px" class="x_panel">
-              <div class="x_content">
-                <div style="height: 400px;width: 550px;float: right;margin-right: 200px;margin-top: 50px">
-                  <h1 style="color:#000" th:text="${goods.Gname}"></h1>
-                  <div style="height: 25px"></div>
-                  <h2>转  卖  价：<big style="font-size: 25px;color:#f40" th:text="'￥'+${goods.Gprices}"></big></h2>
-                  <div style="height: 15px"></div>
-                  <h2>发  布  日  期：<big style="font-size: 20px;color:#000" th:text="${goods.Gdate}"></big></h2>
-                  <div style="height: 15px"></div>
-                  <div style="height: 180px;">
-                    <h2>商  品  描  述：<big style="font-size: 20px;color:#000" th:text="${goods.Gdescribe}"></big></h2>
+          <div>
+
+            <div class="clearfix"></div>
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>订单</h2>
+                    <div class="clearfix"></div>
                   </div>
-                  <div style="height: 15px"></div>
-                  <form action="goods_details" method="post">
-                  <button style="margin-left: 25px" type="submit" class="btn btn-success btn-lg">立  即  购  买</button>
-                  </form>
-                </div>
-                <div style="height: 500px;width: 500px;margin-left: 200px;margin-top: 150px">
-                  <img style="width: 100%;height: 100%;align-content: center ;display: block;" th:src="@{${goods.Gpicture}}"/>
+                  <div class="x_content">
+                    <table class="table table-striped">
+                      <thead>
+                      <tr>
+                        <th>编号</th>
+                        <th>商品名</th>
+                        <th>价格</th>
+                        <th>日期</th>
+                        <th>描述</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr th:each="Goods,status : ${goodsList}">
+                        <td th:text="${Goods.GID}"></td>
+                        <td th:text="${Goods.Gname}"></td>
+                        <td th:text="'￥'+${Goods.Gprices}"></td>
+                        <td th:text="${Goods.Gdate}"></td>
+                        <td th:text="${Goods.Gdescribe}"></td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
         <!-- /page content -->
 
         <!-- footer content -->

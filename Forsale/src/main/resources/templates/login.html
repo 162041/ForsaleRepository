@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
@@ -26,7 +26,6 @@
     <div>
       <a class="hiddenanchor" id="signup"></a>
       <a class="hiddenanchor" id="signin"></a>
-
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
@@ -44,7 +43,7 @@
               </div>
 
               <div class="clearfix"></div>
-
+              <h4 style="color: #f40" th:if="${msg=='密码错误'}" th:text="${msg}"></h4>
               <div class="separator">
                 <p class="change_link">New to site?
                   <a href="#signup" class="to_register"> 注册新账号 </a>

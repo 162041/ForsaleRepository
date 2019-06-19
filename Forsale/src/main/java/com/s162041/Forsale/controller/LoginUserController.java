@@ -95,8 +95,8 @@ public class LoginUserController {
                 return "login";
             }
         } catch (Exception e) {
-            System.out.println(e);
             System.out.println("用户名或密码错误!请重新登录");
+            model.addAttribute("msg","密码错误");
             return "login";
         }
     }
@@ -146,7 +146,7 @@ public class LoginUserController {
         String str="images/"+filename.getOriginalFilename();
         filename.transferTo(new File("D:/GitHub/ForsaleRepository/Forsale/src/main/resources/static/"+str));
         model.addAttribute("loginUser", loginUser);
-        goodsDao.addGoodsRepository(Gname,Gprices,Gtype,Gdescribe,str,"00001");
+        goodsDao.addGoodsRepository(Gname,Gprices,Gtype,Gdescribe,str,loginUser.getBID());
         return "index2";
     }
     //分页商品
@@ -180,11 +180,16 @@ public class LoginUserController {
     //买家查看已购买商品
     @GetMapping("purchase_orders")
     public String purchase_orders (Model model){
-        ordersDao.findByBID(loginUser.getBID());
+        ordersDao.findOrdersByBID(loginUser.getBID());
         model.addAttribute("loginUser", loginUser);
-        model.addAttribute("ordersList",ordersDao.findByBID(loginUser.getBID()));
+        model.addAttribute("ordersList",ordersDao.findOrdersByBID(loginUser.getBID()));
         return "purchase_orders";
     }
-
-
+    //卖家查看已发布的商品
+    @GetMapping("released")
+    public String released(Model model){
+        model.addAttribute("loginUser", loginUser);
+        model.addAttribute("goodsList",goodsDao.findAllByBID(loginUser.getBID()));
+        return "released";
+    }
 }

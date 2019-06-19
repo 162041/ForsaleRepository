@@ -9,7 +9,6 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 import java.util.Date;
 import java.util.List;
-import java.util.Random;
 
 
 @Repository
@@ -24,10 +23,16 @@ public class OrdersRepository {
 		jdbcTemplate.update(sql, ((int)(Math.random()*999999))+"",ostate,gid,gprices,pstate,sid,bid,date,gname);
 	}
 
-	public List<Orders> findByBID(String BID){
+	public List<Orders> findOrdersByBID(String BID){
 		String sql="select * from orders where BID=?";
 		RowMapper<Orders> rowMapper1=new BeanPropertyRowMapper<Orders>(Orders.class);
 		List<Orders> goodsList1= jdbcTemplate.query(sql, rowMapper1,BID);
 		return goodsList1;
 	}
+//	public List<Orders> findOrdersByBID(String BID){
+//		String sql="select * from orders where BID=?";
+//		RowMapper<Orders> rowMapper1=new BeanPropertyRowMapper<Orders>(Orders.class);
+//		List<Orders> goodsList1= jdbcTemplate.query(sql, rowMapper1,BID);
+//		return goodsList1;
+//	}
 }

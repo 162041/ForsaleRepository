@@ -15,7 +15,7 @@ import java.util.List;
 public class GoodsRepository {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
-
+	//商品详情
 	public Goods findByGID(String GID) {
 		String sql="select * from goods where GID=?";
 		RowMapper<Goods> rowMapper1=new BeanPropertyRowMapper<Goods>(Goods.class);
@@ -46,5 +46,12 @@ public class GoodsRepository {
 		String sql= "insert into goods (Gdate,Gprices,SID,Gname,Gdescribe,Gpicture,Gtype) value (?,?,?,?,?,?,?)";
 		//商品编号-时间-价格-卖家编号-商品名称-商品描述-商品图片-商品类型
 		jdbcTemplate.update(sql,date,Gprices,SID,Gname,Gdescribe,Gpicture,Gtype);
+	}
+	//卖家已发布的商品
+	public List<Goods> findAllByBID(String SID){
+		String sql="select * from goods where SID=?";
+		RowMapper<Goods> rowMapper4=new BeanPropertyRowMapper<Goods>(Goods.class);
+		List<Goods> goodsList4= jdbcTemplate.query(sql, rowMapper4,SID);
+		return goodsList4;
 	}
 }
