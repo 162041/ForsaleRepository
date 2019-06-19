@@ -4,8 +4,10 @@ package com.s162041.Forsale.controller;
 import com.s162041.Forsale.dao.GoodsRepository;
 import com.s162041.Forsale.dao.LoginUserRepository;
 import com.s162041.Forsale.dao.OrdersRepository;
+import com.s162041.Forsale.dao.SellerRepository;
 import com.s162041.Forsale.entity.Goods;
 import com.s162041.Forsale.entity.LoginUser;
+import com.s162041.Forsale.entity.Seller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,14 +25,59 @@ public class LoginUserController {
     @Autowired
     private LoginUserRepository loginUserDao;
     @Autowired
+    private SellerRepository sellerDao;
+    @Autowired
     private GoodsRepository goodsDao;
     @Autowired
     private OrdersRepository ordersDao;
     private List<Goods> goodsList;
     private LoginUser loginUser;
+    private Seller seller;
     private Goods goods;
-    //登陆界面
+    //---------游客----------
+    //游客访问
     @GetMapping("/")
+    public String visitor(Model model,String Gtype){
+        goodsList=goodsDao.findByType(Gtype);
+        model.addAttribute("goodsList",goodsList);
+        return "index1";
+    }
+    //分页商品
+    @GetMapping("visitor_category_pages")
+    public String visitor_category_pages (Model model,String Gtype){
+        System.out.println(Gtype);
+        goodsList=goodsDao.findByType(Gtype);
+        model.addAttribute("goodsList",goodsList);
+        return "visitor_category_pages";
+    }
+    //商品详情
+    @GetMapping("visitor_goods_details")
+    public String visitor_goods_details (Model model,String GID){
+        System.out.println(GID);
+        goods=goodsDao.findByGID(GID);
+        model.addAttribute("goods",goods);
+        return "visitor_goods_details";
+    }
+    //搜索框模糊查询
+    @PostMapping("visitor_search")
+    public String visitor_search(Model model,String Gname){
+        model.addAttribute("goodsList",goodsDao.findByName(Gname));
+        return "visitor_category_pages";
+    }
+    //---------游客----------
+    //--------有身份登陆-----
+    //注册
+    @PostMapping("register")
+    public String register(Model model,String Bname,String Bpassword,String Btel){
+        String ID=String.valueOf((int)(Math.random()*9999999));//生成ID
+        loginUserDao.addLoginUser(ID,Bname,Bpassword,Btel);
+        loginUser = loginUserDao.getLoginUser(Bname,Bpassword);
+        sellerDao.addSeller(ID,Bname,Bpassword,Btel);
+        model.addAttribute("loginUser", loginUser);
+        return "index2";
+    }
+    //登陆界面
+    @GetMapping("login")
     public String login(Model model){
         return "login";
     }
@@ -116,8 +163,6 @@ public class LoginUserController {
     public String goods_details (Model model,String GID){
         System.out.println(GID);
         goods=goodsDao.findByGID(GID);
-//        java.util.Date date=new java.util.Date(goods.getGdate().getTime());
-//        System.out.println(date);
         model.addAttribute("goods",goods);
         model.addAttribute("loginUser", loginUser);
         return "goods_details";

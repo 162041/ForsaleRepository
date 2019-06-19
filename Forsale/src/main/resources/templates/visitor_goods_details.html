@@ -26,7 +26,7 @@
       <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
           <div class="navbar nav_title" style="border: 0;">
-            <a href="index" class="site_title"><i class="fa fa-paw"></i> <span>校园二手交易市场</span></a>
+            <a href="/" class="site_title"><i class="fa fa-paw"></i> <span>校园二手交易市场</span></a>
           </div>
 
           <div class="clearfix"></div>
@@ -34,11 +34,10 @@
           <!-- menu profile quick info -->
           <div class="profile clearfix">
             <div class="profile_pic">
-              <a href="personal_information"> <img src="images/img.jpg" alt="..." class="img-circle profile_img"></a>
+              <img src="images/user.png"  class="img-circle profile_img">
             </div>
             <div class="profile_info">
-              <span>Welcome,</span>
-              <h2 th:text="${loginUser.getBname()}"></h2>
+              <a style="font-size: 17px" href="login"> 请登录</a>
             </div>
           </div>
           <!-- /menu profile quick info -->
@@ -50,73 +49,51 @@
             <div class="menu_section">
               <h3>交易市场</h3>
               <ul class="nav side-menu">
-                <li><a href="index"><i class="fa fa-home"></i>首页</a>
+                <li><a href="/"><i class="fa fa-home"></i>首页</a>
 
                 </li>
                 <li><a><i class="fa fa-female"></i> 服装与包市场 <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
-                    <li><a href="category_pages?Gtype=男装">男装</a></li>
-                    <li><a href="category_pages?Gtype=女装">女装</a></li>
-                    <li><a href="category_pages?Gtype=男鞋">男鞋</a></li>
-                    <li><a href="category_pages?Gtype=女鞋">女鞋</a></li>
-                    <li><a href="category_pages?Gtype=女包">女包</a></li>
+                    <li><a href="visitor_category_pages?Gtype=男装">男装</a></li>
+                    <li><a href="visitor_category_pages?Gtype=女装">女装</a></li>
+                    <li><a href="visitor_category_pages?Gtype=男鞋">男鞋</a></li>
+                    <li><a href="visitor_category_pages?Gtype=女鞋">女鞋</a></li>
+                    <li><a href="visitor_category_pages?Gtype=女包">女包</a></li>
                   </ul>
                 </li>
                 <li><a><i class="fa fa-laptop"></i> 手机数码市场 <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
-                    <li><a href="category_pages?Gtype=手机">手机</a></li>
-                    <li><a href="category_pages?Gtype=笔记本电脑">笔记本电脑</a></li>
-                    <li><a href="category_pages?Gtype=平板电脑">平板电脑</a></li>
-                    <li><a href="category_pages?Gtype=单反相机">单反相机</a></li>
-                    <li><a href="category_pages?Gtype=键盘鼠标">键盘鼠标</a></li>
-                    <li><a href="category_pages?Gtype=智能手环">智能手环</a></li>
+                    <li><a href="visitor_category_pages?Gtype=手机">手机</a></li>
+                    <li><a href="visitor_category_pages?Gtype=笔记本电脑">笔记本电脑</a></li>
+                    <li><a href="visitor_category_pages?Gtype=平板电脑">平板电脑</a></li>
+                    <li><a href="visitor_category_pages?Gtype=单反相机">单反相机</a></li>
+                    <li><a href="visitor_category_pages?Gtype=键盘鼠标">键盘鼠标</a></li>
+                    <li><a href="visitor_category_pages?Gtype=智能手环">智能手环</a></li>
                   </ul>
                 </li>
                 <li><a><i class="fa fa-book"></i> 图书市场 <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
-                    <li><a href="category_pages?Gtype=教学图书">教学图书</a></li>
-                    <li><a href="category_pages?Gtype=娱乐图书">娱乐图书</a></li>
+                    <li><a href="visitor_category_pages?Gtype=教学图书">教学图书</a></li>
+                    <li><a href="visitor_category_pages?Gtype=娱乐图书">娱乐图书</a></li>
                   </ul>
                 </li>
                 <li><a><i class="fa fa-bicycle"></i> 电器与代步市场 <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
-                    <li><a href="category_pages?Gtype=洗衣机">洗衣机</a></li>
-                    <li><a href="category_pages?Gtype=冰箱">冰箱</a></li>
-                    <li><a href="category_pages?Gtype=空调">空调</a></li>
-                    <li><a href="category_pages?Gtype=自行车">自行车</a></li>
-                    <li><a href="category_pages?Gtype=电动车">电动车</a></li>
+                    <li><a href="visitor_category_pages?Gtype=洗衣机">洗衣机</a></li>
+                    <li><a href="visitor_category_pages?Gtype=冰箱">冰箱</a></li>
+                    <li><a href="visitor_category_pages?Gtype=空调">空调</a></li>
+                    <li><a href="visitor_category_pages?Gtype=自行车">自行车</a></li>
+                    <li><a href="visitor_category_pages?Gtype=电动车">电动车</a></li>
                   </ul>
                 </li>
                 <li><a><em class="fa fa-futbol-o"></em>运动市场 <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
-                    <li><a href="category_pages?Gtype=体育用品">体育用品</a></li>
-                    <li><a href="category_pages?Gtype=健身器材">健身器材</a></li>
+                    <li><a href="visitor_category_pages?Gtype=体育用品">体育用品</a></li>
+                    <li><a href="visitor_category_pages?Gtype=健身器材">健身器材</a></li>
                   </ul>
                 </li>
               </ul>
             </div>
-            <div class="menu_section">
-              <h3>个人中心</h3>
-              <ul class="nav side-menu">
-                <li><a><i class="fa fa-bug"></i> 我是买家<span class="fa fa-chevron-down"></span></a>
-                  <ul class="nav child_menu">
-                    <li><a href="purchase_orders">我购买的商品</a></li>
-                    <li></li>
-                    <li></li>
-                  </ul>
-                </li>
-                <li><a><i class="fa fa-sitemap"></i> 我是卖家<span class="fa fa-chevron-down"></span></a>
-                  <ul class="nav child_menu">
-                    <li><a href="release_goods">发布商品</a></li>
-                    <li><a href="">已发布的商品</a></li>
-                    <li><a href="">已出售的商品</a>
-                    </li>
-                  </ul>
-                </li>
-                <li><a href=""><i class="fa fa-laptop"></i> 联系客服 <span class="label label-success pull-right">help</span></a></li>
-              </ul>
-            </div>
-
           </div>
           <!-- /sidebar menu -->
 
@@ -146,15 +123,6 @@
             <div class="nav toggle">
               <a id="menu_toggle"><i class="fa fa-bars"></i></a>
             </div>
-
-            <ul class="nav navbar-nav navbar-right">
-              <li class="">
-                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                  <img th:text="${loginUser.getBname()}" src="images/img.jpg">
-                  <span class=" fa fa-angle-down"></span>
-                </a>
-              </li>
-            </ul>
           </nav>
         </div>
 
@@ -163,47 +131,33 @@
 
         <!-- page content -->
       <div class="right_col" role="main">
-          <div>
-
-            <div class="clearfix"></div>
-
-            <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>订单</h2>
-                    <div class="clearfix"></div>
+        <div>
+          <div class=>
+            <div style="height: 900px" class="x_panel">
+              <div class="x_content">
+                <div style="height: 400px;width: 550px;float: right;margin-right: 200px;margin-top: 50px">
+                  <h1 style="color:#000" th:text="${goods.Gname}"></h1>
+                  <div style="height: 25px"></div>
+                  <h2>转  卖  价：<big style="font-size: 25px;color:#f40" th:text="'￥'+${goods.Gprices}"></big></h2>
+                  <div style="height: 15px"></div>
+                  <h2>发  布  日  期：<big style="font-size: 20px;color:#000" th:text="${goods.Gdate}"></big></h2>
+                  <div style="height: 15px"></div>
+                  <div style="height: 180px;">
+                    <h2>商  品  描  述：<big style="font-size: 20px;color:#000" th:text="${goods.Gdescribe}"></big></h2>
                   </div>
-                  <div class="x_content">
-                    <table class="table table-striped">
-                      <thead>
-                      <tr>
-                        <th>编号</th>
-                        <th>商品名</th>
-                        <th>价格</th>
-                        <th>地址</th>
-                        <th>日期</th>
-                        <th>状态</th>
-                      </tr>
-                      </thead>
-                      <tbody>
-                      <tr th:each="Orders,status : ${ordersList}">
-                        <td th:text="${Orders.oid}"></td>
-                        <td th:text="${Orders.gname}"></td>
-                        <td th:text="'￥'+${Orders.gprices}"></td>
-                        <td th:text="${Orders.pstate}"></td>
-                        <td th:text="${Orders.odate}"></td>
-                        <td th:text="${Orders.ostate}"></td>
-
-                      </tr>
-                      </tbody>
-                    </table>
-                  </div>
+                  <div style="height: 15px"></div>
+                  <form action="login" method="post">
+                  <button style="margin-left: 25px" type="submit" class="btn btn-success btn-lg">立  即  购  买</button>
+                  </form>
+                </div>
+                <div style="height: 500px;width: 500px;margin-left: 200px;margin-top: 150px">
+                  <img style="width: 100%;height: 100%;align-content: center ;display: block;" th:src="@{${goods.Gpicture}}"/>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
         <!-- /page content -->
 
         <!-- footer content -->
