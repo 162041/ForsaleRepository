@@ -24,8 +24,10 @@ public class LoginUserRepository {
 		}else
 			return null;				
 	}
-	public void setLoginUser(String BID ,String Bname,String Btel){
+	public void setLoginUser(String BID ,String Bname,String Btel,String Pstate){
 		String sql= "update buyer set Bname=?,Btel=? where BID=?";
 		jdbcTemplate.update(sql,Bname,Btel,BID);
+		sql= "update address set Pstate=? where BID=?";
+		jdbcTemplate.update(sql,Pstate,BID);
 	}
 }

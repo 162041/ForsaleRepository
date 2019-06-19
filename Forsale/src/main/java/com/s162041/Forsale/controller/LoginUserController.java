@@ -3,6 +3,7 @@ package com.s162041.Forsale.controller;
 
 import com.s162041.Forsale.dao.GoodsRepository;
 import com.s162041.Forsale.dao.LoginUserRepository;
+import com.s162041.Forsale.dao.OrdersRepository;
 import com.s162041.Forsale.entity.Goods;
 import com.s162041.Forsale.entity.LoginUser;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,9 +13,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.annotation.Resource;
+
 import java.io.File;
-import java.util.Date;
 import java.util.List;
 
 
@@ -24,6 +24,8 @@ public class LoginUserController {
     private LoginUserRepository loginUserDao;
     @Autowired
     private GoodsRepository goodsDao;
+    @Autowired
+    private OrdersRepository ordersDao;
     private List<Goods> goodsList;
     private LoginUser loginUser;
     private Goods goods;
@@ -58,7 +60,14 @@ public class LoginUserController {
         model.addAttribute("loginUser", loginUser);
         return "index2";
     }
-
+    //搜索框模糊查询
+    @PostMapping("search")
+    public String search(Model model,String Gname){
+        System.out.println("index:"+loginUser.getBname());
+        model.addAttribute("goodsList",goodsDao.findByName(Gname));
+        model.addAttribute("loginUser", loginUser);
+        return "category_pages";
+    }
     //个人信息界面
     @GetMapping("personal_information")
     public String personal_information(Model model){
@@ -67,12 +76,12 @@ public class LoginUserController {
         return "personal_information";
     }
     @PostMapping("personal_information")
-    public String change_personal_information(Model model,String Bname,String Atel){
-        loginUserDao.setLoginUser(loginUser.getBID(),Bname,Atel);
+    public String change_personal_information(Model model,String Bname,String Atel,String Pstate){
+        loginUserDao.setLoginUser(loginUser.getBID(),Bname,Atel,Pstate);
         //更新loginUser
         loginUser = loginUserDao.getLoginUser(Bname,loginUser.getBpassword( ));
         model.addAttribute("loginUser", loginUser);
-        System.out.println(Bname +"#"+Atel+"#"+loginUser.getBname());
+        System.out.println("Pstate"+Pstate);
         return "personal_information";
     }
 
@@ -83,6 +92,7 @@ public class LoginUserController {
         System.out.println(loginUser.getBname());
         return "release_goods";
     }
+    //发布商品操作
     @PostMapping("release_goods")
     public String release_goods_submit(Model model, String Gname, String Gdescribe, String Gprices, String Gtype, MultipartFile filename)throws Exception{
         System.out.println("#"+Gname+"#"+Gprices+"#"+Gtype+"#"+Gdescribe+"#"+filename.getOriginalFilename()+"#"+loginUser.getBID());
@@ -108,9 +118,28 @@ public class LoginUserController {
         goods=goodsDao.findByGID(GID);
 //        java.util.Date date=new java.util.Date(goods.getGdate().getTime());
 //        System.out.println(date);
-        System.out.println(goods.getGname());
         model.addAttribute("goods",goods);
         model.addAttribute("loginUser", loginUser);
         return "goods_details";
     }
+    //生产订单操作
+    @PostMapping("goods_details")
+    public String orders (Model model){
+        System.out.println("Gname为"+goods.getGname());
+        //订单状态-商品编号-商品价格-地址-卖家编号-买家编号-商品名称
+        ordersDao.addOrdersRepository("待付",goods.getGID(),goods.getGprices(),"南昌前湖大道","00001",loginUser.getBID(),goods.getGname());
+        model.addAttribute("goods",goods);
+        model.addAttribute("loginUser", loginUser);
+        return "index2";
+    }
+    //买家查看已购买商品
+    @GetMapping("purchase_orders")
+    public String purchase_orders (Model model){
+        ordersDao.findByBID(loginUser.getBID());
+        model.addAttribute("loginUser", loginUser);
+        model.addAttribute("ordersList",ordersDao.findByBID(loginUser.getBID()));
+        return "purchase_orders";
+    }
+
+
 }

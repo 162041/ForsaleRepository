@@ -1,6 +1,6 @@
 package com.s162041.Forsale.entity;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Goods {
     private String GID;//商品编号
@@ -64,14 +64,6 @@ public class Goods {
         this.SID = SID;
     }
 
-    public Date getGdate() {
-        return Gdate;
-    }
-
-    public void setGdate() {
-        Gdate = new Date();
-    }
-
     public String getGname() {
         return Gname;
     }
@@ -86,5 +78,14 @@ public class Goods {
 
     public void setGtype(String gtype) {
         Gtype = gtype;
+    }
+
+
+    public Date getGdate() {
+        return Gdate;
+    }
+
+    public void setGdate(Date gdate) {
+        Gdate = gdate;
     }
 }

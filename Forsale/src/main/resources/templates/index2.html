@@ -89,7 +89,7 @@
                   <li><a><i class="fa fa-bicycle"></i> 电器与代步市场 <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="category_pages?Gtype=洗衣机">洗衣机</a></li>
-                      <li><a href="category_pages?Gtype=吹风机">吹风机</a></li>
+                      <li><a href="category_pages?Gtype=冰箱">冰箱</a></li>
                       <li><a href="category_pages?Gtype=空调">空调</a></li>
                       <li><a href="category_pages?Gtype=自行车">自行车</a></li>
                       <li><a href="category_pages?Gtype=电动车">电动车</a></li>
@@ -108,8 +108,7 @@
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-bug"></i> 我是买家<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="">购物车</a></li>
-                      <li><a href="">已购买的物品</a></li>
+                      <li><a href="purchase_orders">我购买的商品</a></li>
                       <li></li>
                       <li></li>
                     </ul>
@@ -180,12 +179,14 @@
 
               <div class="title_right">
                 <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                  <form action="search" method="post">
                   <div class="input-group col-lg-8">
-                    <input type="text" class="form-control" placeholder="Search for...">
+                    <input type="text" name="Gname" class="form-control" placeholder="Search for...">
                     <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
+                      <button class="btn btn-default"  type="submit">Go!</button>
                     </span>
                   </div>
+                  </form>
                 </div>
               </div>
 				<div class="container">

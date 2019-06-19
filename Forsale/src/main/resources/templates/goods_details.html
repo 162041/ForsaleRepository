@@ -81,7 +81,7 @@
                 <li><a><i class="fa fa-bicycle"></i> 电器与代步市场 <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
                     <li><a href="category_pages?Gtype=洗衣机">洗衣机</a></li>
-                    <li><a href="category_pages?Gtype=吹风机">吹风机</a></li>
+                    <li><a href="category_pages?Gtype=冰箱">冰箱</a></li>
                     <li><a href="category_pages?Gtype=空调">空调</a></li>
                     <li><a href="category_pages?Gtype=自行车">自行车</a></li>
                     <li><a href="category_pages?Gtype=电动车">电动车</a></li>
@@ -100,8 +100,7 @@
               <ul class="nav side-menu">
                 <li><a><i class="fa fa-bug"></i> 我是买家<span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
-                    <li><a href="">购物车</a></li>
-                    <li><a href="">已购买的物品</a></li>
+                    <li><a href="purchase_orders">我购买的商品</a></li>
                     <li></li>
                     <li></li>
                   </ul>
@@ -171,7 +170,7 @@
                 <div style="height: 400px;width: 550px;float: right;margin-right: 200px;margin-top: 50px">
                   <h1 style="color:#000" th:text="${goods.Gname}"></h1>
                   <div style="height: 25px"></div>
-                  <h2>转  卖  价：<big style="font-size: 25px;color:#f40" th:text="${goods.Gprices}"></big></h2>
+                  <h2>转  卖  价：<big style="font-size: 25px;color:#f40" th:text="'￥'+${goods.Gprices}"></big></h2>
                   <div style="height: 15px"></div>
                   <h2>发  布  日  期：<big style="font-size: 20px;color:#000" th:text="${goods.Gdate}"></big></h2>
                   <div style="height: 15px"></div>
@@ -179,7 +178,9 @@
                     <h2>商  品  描  述：<big style="font-size: 20px;color:#000" th:text="${goods.Gdescribe}"></big></h2>
                   </div>
                   <div style="height: 15px"></div>
-                  <button style="margin-left: 25px" type="button" class="btn btn-success btn-lg">立  即  购  买</button>
+                  <form action="goods_details" method="post">
+                  <button style="margin-left: 25px" type="submit" class="btn btn-success btn-lg">立  即  购  买</button>
+                  </form>
                 </div>
                 <div style="height: 500px;width: 500px;margin-left: 200px;margin-top: 150px">
                   <img style="width: 100%;height: 100%;align-content: center ;display: block;" th:src="@{${goods.Gpicture}}"/>

@@ -162,56 +162,42 @@
       <!-- /top navigation -->
 
         <!-- page content -->
-        <div class="right_col" role="main">
-          <div class="">
-            <div class="page-title">
-              <div class="title_left">
-                <h3>商品</h3>
-              </div>
-
-              <div class="title_right">
-                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                  <form action="search" method="post">
-                    <div class="input-group col-lg-8">
-                      <input type="text" name="Gname" class="form-control" placeholder="Search for...">
-                      <span class="input-group-btn">
-                      <button class="btn btn-default"  type="submit">Go!</button>
-                    </span>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
+      <div class="right_col" role="main">
+          <div>
 
             <div class="clearfix"></div>
 
             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12">
-                <div style="height: 1200px" class="x_panel">
+                <div class="x_panel">
                   <div class="x_title">
+                    <h2>订单</h2>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <tbody>
-                    <tr th:each="Goods,status : ${goodsList}">
-                      <div class="col-md-2">
-                        <div class="thumbnail">
-                          <div class="image view view-first">
-                            <a th:href="@{'goods_details?GID='+${Goods.GID}}">
-                              <img style="width: 100%;height: 100%;align-content: center ;display: block;" th:src="@{${Goods.Gpicture}}" />
-                            </a>
-                          </div>
-                          <div style="font-size: 20px">
-                          <strong th:text="${Goods.Gname}"></strong>
-                          </div>
-                          <div style="color: #f40;font-size: 15px">
-                              ￥
-                              <strong th:text="${Goods.Gprices}"></strong>
-                          </div>
-                        </div>
-                      </div>
-                    </tr>
-                    </tbody>
+                    <table class="table table-striped">
+                      <thead>
+                      <tr>
+                        <th>编号</th>
+                        <th>商品名</th>
+                        <th>价格</th>
+                        <th>地址</th>
+                        <th>日期</th>
+                        <th>状态</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr th:each="Orders,status : ${ordersList}">
+                        <td th:text="${Orders.oid}"></td>
+                        <td th:text="${Orders.gname}"></td>
+                        <td th:text="${Orders.gprices}"></td>
+                        <td th:text="${Orders.pstate}"></td>
+                        <td th:text="${Orders.odate}"></td>
+                        <td th:text="${Orders.ostate}"></td>
+
+                      </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
