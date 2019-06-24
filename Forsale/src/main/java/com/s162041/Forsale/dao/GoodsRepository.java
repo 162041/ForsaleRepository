@@ -1,5 +1,7 @@
 package com.s162041.Forsale.dao;
-
+/**
+ *  对数据库里的商品表操作
+ */
 import com.s162041.Forsale.entity.Goods;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -39,13 +41,18 @@ public class GoodsRepository {
 		List<Goods> goodsList3= jdbcTemplate.query(sql, rowMapper3);
 		return goodsList3;
 	}
-
+	//添加商品
 	public void addGoodsRepository(String Gname,String Gprices,String Gtype,String Gdescribe,String Gpicture,String SID){
-//		java.sql.Date date=new java.sql.Date(new Date().getTime());
 		Date date=new Date();
+
 		String sql= "insert into goods (Gdate,Gprices,SID,Gname,Gdescribe,Gpicture,Gtype) value (?,?,?,?,?,?,?)";
 		//商品编号-时间-价格-卖家编号-商品名称-商品描述-商品图片-商品类型
 		jdbcTemplate.update(sql,date,Gprices,SID,Gname,Gdescribe,Gpicture,Gtype);
+	}
+	//删除商品
+	public void deleteGoodsRepository(String GID){
+		String sql= "delete from goods where GID=?";
+		jdbcTemplate.update(sql,GID);
 	}
 	//卖家已发布的商品
 	public List<Goods> findAllByBID(String SID){

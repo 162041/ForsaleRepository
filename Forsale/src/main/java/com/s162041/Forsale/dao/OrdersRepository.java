@@ -1,6 +1,8 @@
 package com.s162041.Forsale.dao;
 
-
+/**
+ *  对数据库里的订单表操作
+ */
 import com.s162041.Forsale.entity.Orders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;

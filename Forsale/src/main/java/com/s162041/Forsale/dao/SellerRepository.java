@@ -1,5 +1,7 @@
 package com.s162041.Forsale.dao;
-
+/**
+ *  对数据库里的卖家表操作
+ */
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;

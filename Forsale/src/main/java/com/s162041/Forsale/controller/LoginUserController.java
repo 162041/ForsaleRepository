@@ -1,10 +1,7 @@
 package com.s162041.Forsale.controller;
 
 
-import com.s162041.Forsale.dao.GoodsRepository;
-import com.s162041.Forsale.dao.LoginUserRepository;
-import com.s162041.Forsale.dao.OrdersRepository;
-import com.s162041.Forsale.dao.SellerRepository;
+import com.s162041.Forsale.dao.*;
 import com.s162041.Forsale.entity.Goods;
 import com.s162041.Forsale.entity.LoginUser;
 import com.s162041.Forsale.entity.Seller;
@@ -30,6 +27,8 @@ public class LoginUserController {
     private GoodsRepository goodsDao;
     @Autowired
     private OrdersRepository ordersDao;
+    @Autowired
+    private AnnouncementRepository announcementDao;
     private List<Goods> goodsList;
     private LoginUser loginUser;
     private Seller seller;
@@ -39,6 +38,7 @@ public class LoginUserController {
     @GetMapping("/")
     public String visitor(Model model,String Gtype){
         goodsList=goodsDao.findByType(Gtype);
+        model.addAttribute("AnnouncementList",announcementDao.findAll());
         model.addAttribute("goodsList",goodsList);
         return "index1";
     }
@@ -79,6 +79,7 @@ public class LoginUserController {
     //登陆界面
     @GetMapping("login")
     public String login(Model model){
+        model.addAttribute("msg","1");
         return "login";
     }
     @PostMapping("login")
@@ -88,6 +89,7 @@ public class LoginUserController {
             System.out.println(Bname + Bpassword+loginUser.getBID()+loginUser.getBtel());
             if (loginUser != null) {
                 model.addAttribute("loginUser", loginUser);
+                model.addAttribute("AnnouncementList",announcementDao.findAll());
                 System.out.println("成功");
                 return "index2";
             } else {
@@ -103,8 +105,9 @@ public class LoginUserController {
     //首页
     @GetMapping("index")
     public String index(Model model){
-        System.out.println("index:"+loginUser.getBname());
+        System.out.println("Ncontent:"+(announcementDao.findAll().get(0).getNcontent()));
         model.addAttribute("loginUser", loginUser);
+        model.addAttribute("AnnouncementList",announcementDao.findAll());
         return "index2";
     }
     //搜索框模糊查询
@@ -131,7 +134,7 @@ public class LoginUserController {
         System.out.println("Pstate"+Pstate);
         return "personal_information";
     }
-
+    //--------商品----------
     //发布商品界面
     @GetMapping("release_goods")
     public String release_goods(Model model){
@@ -149,6 +152,14 @@ public class LoginUserController {
         goodsDao.addGoodsRepository(Gname,Gprices,Gtype,Gdescribe,str,loginUser.getBID());
         return "index2";
     }
+    //删除商品
+    @GetMapping("delete_goods")
+    public String delete_goods_submit(Model model,String GID){
+        model.addAttribute("loginUser", loginUser);
+        goodsDao.deleteGoodsRepository(GID);
+        model.addAttribute("goodsList",goodsDao.findAllByBID(loginUser.getBID()));
+        return "released";
+    }
     //分页商品
     @GetMapping("category_pages")
     public String category_pages (Model model,String Gtype){
@@ -158,6 +169,22 @@ public class LoginUserController {
         model.addAttribute("goodsList",goodsList);
         return "category_pages";
     }
+    //买家查看已购买商品
+    @GetMapping("purchase_orders")
+    public String purchase_orders (Model model){
+        ordersDao.findOrdersByBID(loginUser.getBID());
+        model.addAttribute("loginUser", loginUser);
+        model.addAttribute("ordersList",ordersDao.findOrdersByBID(loginUser.getBID()));
+        return "purchase_orders";
+    }
+    //卖家查看已发布的商品
+    @GetMapping("released")
+    public String released(Model model){
+        model.addAttribute("loginUser", loginUser);
+        model.addAttribute("goodsList",goodsDao.findAllByBID(loginUser.getBID()));
+        return "released";
+    }
+    //--------订单----------
     //进入详细订单页面
     @GetMapping("goods_details")
     public String goods_details (Model model,String GID){
@@ -177,19 +204,6 @@ public class LoginUserController {
         model.addAttribute("loginUser", loginUser);
         return "index2";
     }
-    //买家查看已购买商品
-    @GetMapping("purchase_orders")
-    public String purchase_orders (Model model){
-        ordersDao.findOrdersByBID(loginUser.getBID());
-        model.addAttribute("loginUser", loginUser);
-        model.addAttribute("ordersList",ordersDao.findOrdersByBID(loginUser.getBID()));
-        return "purchase_orders";
-    }
-    //卖家查看已发布的商品
-    @GetMapping("released")
-    public String released(Model model){
-        model.addAttribute("loginUser", loginUser);
-        model.addAttribute("goodsList",goodsDao.findAllByBID(loginUser.getBID()));
-        return "released";
-    }
+
+    //--------公告----------
 }

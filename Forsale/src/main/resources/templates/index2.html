@@ -130,16 +130,7 @@
 
             <!-- /menu footer buttons -->
             <div class="sidebar-footer hidden-small">
-              <a data-toggle="tooltip" data-placement="top" title="Settings">
-                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Lock">
-                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+              <a style="width:228px" data-toggle="tooltip" data-placement="top" title="退出" href="login">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
               </a>
             </div>
@@ -220,9 +211,9 @@
         </ul>
         <div id="myTabContent1" class="tab-content">
           <div style="height: 50px" class="tab-pane fade in active" id="home1">
-            <h4 style="padding-left: 30px">买二手电脑需要注意什么？</h4>
-			<h4 style="padding-left: 30px">二手手机品质分级你知道吗？</h4>
-			
+            <div th:each="Announcement,status : ${AnnouncementList}">
+              <h4 th:if="${status.count}<3" th:text="${Announcement.Ncontent}" style="padding-left: 30px"></h4>
+            </div>
           </div>
           <div style="height: 50px" class="tab-pane fade" id="pane2">
             <h4 style="padding-left: 30px">Iphone X 256G 低至5000 </h4>

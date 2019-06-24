@@ -1,5 +1,7 @@
 package com.s162041.Forsale.dao;
-
+/**
+ *  对数据库里的买家表操作
+ */
 import com.s162041.Forsale.entity.LoginUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
