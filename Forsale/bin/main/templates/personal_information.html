@@ -1,0 +1,263 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title> 首页 </title>
+
+    <!-- Bootstrap -->
+    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    
+    <!-- Custom styling plus plugins -->
+    <link href="../build/css/custom.min.css" rel="stylesheet">
+    <link href="jQueryAssets/jquery.ui.core.min.css" rel="stylesheet" type="text/css">
+    <link href="jQueryAssets/jquery.ui.theme.min.css" rel="stylesheet" type="text/css">
+    <link href="jQueryAssets/jquery.ui.slider.min.css" rel="stylesheet" type="text/css">
+    <link href="jQueryAssets/jquery.ui.button.min.css" rel="stylesheet" type="text/css">
+  <script src="jQueryAssets/jquery-1.11.1.min.js"></script>
+  <script src="jQueryAssets/jquery.ui-1.10.4.slider.min.js"></script>
+  <script src="jQueryAssets/jquery.ui-1.10.4.button.min.js"></script>
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="index" class="site_title"><i class="fa fa-paw"></i> <span>校园二手交易市场</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <div class="profile clearfix">
+              <div class="profile_pic">                
+				<a href="personal_information"> <img src="images/img.jpg" alt="..." class="img-circle profile_img"></a>
+              </div>
+              <div class="profile_info">
+                <span>Welcome,</span>
+                <h2 th:text="${loginUser.bname}"></h2>
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <h3>交易市场</h3>
+                <ul class="nav side-menu">
+                  <li><a href="index"><i class="fa fa-home"></i>首页</a>
+
+                  </li>
+                  <li><a><i class="fa fa-female"></i> 服装与包市场 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="category_pages?Gtype=男装">男装</a></li>
+                      <li><a href="category_pages?Gtype=女装">女装</a></li>
+                      <li><a href="category_pages?Gtype=男鞋">男鞋</a></li>
+                      <li><a href="category_pages?Gtype=女鞋">女鞋</a></li>
+                      <li><a href="category_pages?Gtype=女包">女包</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-laptop"></i> 手机数码市场 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="category_pages?Gtype=手机">手机</a></li>
+                      <li><a href="category_pages?Gtype=笔记本电脑">笔记本电脑</a></li>
+                      <li><a href="category_pages?Gtype=平板电脑">平板电脑</a></li>
+                      <li><a href="category_pages?Gtype=单反相机">单反相机</a></li>
+                      <li><a href="category_pages?Gtype=键盘鼠标">键盘鼠标</a></li>
+                      <li><a href="category_pages?Gtype=智能手环">智能手环</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-book"></i> 图书市场 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="category_pages?Gtype=教学图书">教学图书</a></li>
+                      <li><a href="category_pages?Gtype=娱乐图书">娱乐图书</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-bicycle"></i> 电器与代步市场 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="category_pages?Gtype=洗衣机">洗衣机</a></li>
+                      <li><a href="category_pages?Gtype=冰箱">冰箱</a></li>
+                      <li><a href="category_pages?Gtype=空调">空调</a></li>
+                      <li><a href="category_pages?Gtype=自行车">自行车</a></li>
+                      <li><a href="category_pages?Gtype=电动车">电动车</a></li>
+                    </ul>
+                  </li>
+                  <li><a><em class="fa fa-futbol-o"></em>运动市场 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="category_pages?Gtype=体育用品">体育用品</a></li>
+                      <li><a href="category_pages?Gtype=健身器材">健身器材</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div class="menu_section">
+                <h3>个人中心</h3>
+                <ul class="nav side-menu">
+                  <li><a><i class="fa fa-bug"></i> 我是买家<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="purchase_orders">已购买的物品</a></li>
+                      <li></li>
+                      <li></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-sitemap"></i> 我是卖家<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="release_goods">发布商品</a></li>
+                      <li><a href="released">已发布的商品</a></li>
+                      <li><a href="sold">已出售的商品</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a href="complain"><i class="fa fa-laptop"></i> 投诉 </a></li>
+                </ul>
+              </div>
+
+            </div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+            <div class="sidebar-footer hidden-small">
+              <a style="width:228px" data-toggle="tooltip" data-placement="top" title="退出" href="login">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+              </a>
+            </div>
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+            <nav>
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>
+
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    <img th:text="${loginUser.bname}" src="images/img.jpg">
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+        </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>个人信息</h3>
+              </div>
+
+              <div class="title_right"> </div>
+				<div class="container">   
+  </div>
+	<div style="width: 100%;height: 40px">
+	<div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <form id="demo-form2" class="form-horizontal form-label-left" method="post" action="personal_information">
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" >用户账号<span class="required"></span>
+                    </label><h5 th:text="${loginUser.bid}"></h5>
+</div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">用户名<span class="required"></span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="last-name"  name="Bname" required="required" class="form-control col-md-7 col-xs-12" th:value="${loginUser.bname}">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">联系电话</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="Atel" th:value="${loginUser.btel}">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">性别</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <div id="gender" class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                              <input type="radio" name="gender" value="male"> &nbsp; 男 &nbsp;
+                            </label>
+                            <label class="btn btn-primary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                              <input type="radio" name="gender" value="female"> 女
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">地址 <span class="required"></span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input name="Pstate" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" th:value="${address.pstate}">
+                        </div>
+                      </div>
+                      <div class="ln_solid"></div>
+                      <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                          <button class="btn btn-primary" type="button">取消</button>
+                          <button type="submit" class="btn btn-success">保存</button>
+                        </div>
+                      </div>
+
+                    </form>
+              </div>
+            </div>
+	</div>
+</div>
+		</div>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+<div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="../vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="../vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="../vendors/nprogress/nprogress.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="../build/js/custom.min.js"></script>
+  <script type="text/javascript">
+$(function() {
+	$( "#Slider1" ).slider(); 
+});
+$(function() {
+	$( "#Button1" ).button(); 
+});
+$(function() {
+	$( "#Slider1" ).slider(); 
+});
+  </script>
+  </body>
+</html>

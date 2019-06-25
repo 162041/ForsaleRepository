@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title> 首页 </title>
+
+    <!-- Bootstrap -->
+    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    
+    <!-- Custom styling plus plugins -->
+    <link href="../build/css/custom.min.css" rel="stylesheet">
+    <link href="jQueryAssets/jquery.ui.core.min.css" rel="stylesheet" type="text/css">
+    <link href="jQueryAssets/jquery.ui.theme.min.css" rel="stylesheet" type="text/css">
+    <link href="jQueryAssets/jquery.ui.slider.min.css" rel="stylesheet" type="text/css">
+    <link href="jQueryAssets/jquery.ui.button.min.css" rel="stylesheet" type="text/css">
+  <script src="jQueryAssets/jquery-1.11.1.min.js"></script>
+  <script src="jQueryAssets/jquery.ui-1.10.4.slider.min.js"></script>
+  <script src="jQueryAssets/jquery.ui-1.10.4.button.min.js"></script>
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="/" class="site_title"><i class="fa fa-paw"></i> <span>校园二手交易市场</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <div class="profile clearfix">
+              <div class="profile_pic">
+               <img src="images/user.png"  class="img-circle profile_img">
+              </div>
+              <div class="profile_info">
+                <a style="font-size: 17px" href="login"> 请登录</a>
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <h3>交易市场</h3>
+                <ul class="nav side-menu">
+                  <li><a href="/"><i class="fa fa-home"></i>首页</a>
+
+                  </li>
+                  <li><a><i class="fa fa-female"></i> 服装与包市场 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="visitor_category_pages?Gtype=男装">男装</a></li>
+                      <li><a href="visitor_category_pages?Gtype=女装">女装</a></li>
+                      <li><a href="visitor_category_pages?Gtype=男鞋">男鞋</a></li>
+                      <li><a href="visitor_category_pages?Gtype=女鞋">女鞋</a></li>
+                      <li><a href="visitor_category_pages?Gtype=女包">女包</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-laptop"></i> 手机数码市场 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="visitor_category_pages?Gtype=手机">手机</a></li>
+                      <li><a href="visitor_category_pages?Gtype=笔记本电脑">笔记本电脑</a></li>
+                      <li><a href="visitor_category_pages?Gtype=平板电脑">平板电脑</a></li>
+                      <li><a href="visitor_category_pages?Gtype=单反相机">单反相机</a></li>
+                      <li><a href="visitor_category_pages?Gtype=键盘鼠标">键盘鼠标</a></li>
+                      <li><a href="visitor_category_pages?Gtype=智能手环">智能手环</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-book"></i> 图书市场 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="visitor_category_pages?Gtype=教学图书">教学图书</a></li>
+                      <li><a href="visitor_category_pages?Gtype=娱乐图书">娱乐图书</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-bicycle"></i> 电器与代步市场 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="visitor_category_pages?Gtype=洗衣机">洗衣机</a></li>
+                      <li><a href="visitor_category_pages?Gtype=冰箱">冰箱</a></li>
+                      <li><a href="visitor_category_pages?Gtype=空调">空调</a></li>
+                      <li><a href="visitor_category_pages?Gtype=自行车">自行车</a></li>
+                      <li><a href="visitor_category_pages?Gtype=电动车">电动车</a></li>
+                    </ul>
+                  </li>
+                  <li><a><em class="fa fa-futbol-o"></em>运动市场 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="visitor_category_pages?Gtype=体育用品">体育用品</a></li>
+                      <li><a href="visitor_category_pages?Gtype=健身器材">健身器材</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div class="menu_section">
+<ul class="nav side-menu">
+                  
+              <li>
+  <ul class="nav child_menu">
+    <li><a href="#level1_1">Level One</a>
+      </li>
+    <li><a>Level One<span class="fa fa-chevron-down"></span></a>
+      <ul class="nav child_menu">
+        <li class="sub_menu"><a href="level2.html">Level Two</a>
+          </li>
+        <li><a href="#level2_1">Level Two</a>
+          </li>
+        <li><a href="#level2_2">Level Two</a>
+          </li>
+        </ul>
+      </li>
+    <li><a href="#level1_2">Level One</a>
+      </li>
+    </ul>
+                  </li>                  
+                  <li></li>
+                </ul>
+              </div>
+
+            </div>
+            <!-- /sidebar menu -->
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+            <nav>
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+              </div>
+
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+<ul class="dropdown-menu dropdown-usermenu pull-right">
+                <li><a href="javascript:;"> Profile</a></li>
+                    <li>
+                      <a href="javascript:;">
+                        <span class="badge bg-red pull-right">50%</span>
+                        <span>Settings</span>
+                      </a>
+                    </li>
+                    <li><a href="javascript:;">Help</a></li>
+                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                  </ul>
+                </li>
+
+                <li role="presentation" class="dropdown">
+<ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a>
+                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="text-center">
+                        <a>
+                          <strong>See All Alerts</strong>
+                          <i class="fa fa-angle-right"></i>
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+        </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>首页</h3>
+              </div>
+
+              <div class="title_right">
+                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                  <form action="visitor_search" method="post">
+                    <div class="input-group col-lg-8">
+                      <input type="text" name="Gname" class="form-control" placeholder="Search for...">
+                      <span class="input-group-btn">
+                      <button class="btn btn-default"  type="submit">Go!</button>
+                    </span>
+                    </div>
+                  </form>
+                </div>
+              </div>
+				<div class="container">
+    <div class="row">
+      <div class="col-xs-10 col-sm-10 col-md-10 hidden-xs col-lg-6 col-lg-offset-3">
+        <div id="carousel-299058" class="carousel slide">
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-299058" data-slide-to="0" > </li>
+			<li data-target="#carousel-299058" data-slide-to="1" > </li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="item col-lg-offset-0"> <img style="width: 100%;height: 100%" class="img-responsive" src="images/主页.jpg" alt="thumb">
+              <div class="carousel-caption"> </div>
+            </div>
+            <div class="item active"> <img style="width: 100%;height: 100%" class="img-responsive" src="images/主页2.jpg" alt="thumb">
+              <div class="carousel-caption"> </div>
+            </div>
+			
+          </div>
+          <a class="left carousel-control" href="#carousel-299058" data-slide="prev"><span class="icon-prev"></span></a> <a class="right carousel-control" href="#carousel-299058" data-slide="next"><span class="icon-next"></span></a></div>
+      </div>
+	<div>
+		<div class="col-lg-2">
+		 <div style="height: 350px">
+        <h3>二手头条</h3>
+        <hr>
+        <ul id="myTab1" class="nav nav-tabs">
+          <li class="active"> <a href="#home1" data-toggle="tab">公告</a> </li>
+          <li><a href="#pane2" data-toggle="tab">促销</a></li>
+        </ul>
+        <div id="myTabContent1" class="tab-content">
+          <div style="height: 50px" class="tab-pane fade in active" id="home1">
+            <div th:each="Announcement,status : ${AnnouncementList}">
+              <h4 th:if="${status.count}<3" th:text="${Announcement.Ncontent}" style="padding-left: 30px"></h4>
+            </div>
+          </div>
+          <div style="height: 50px" class="tab-pane fade" id="pane2">
+            <h4 style="padding-left: 30px">Iphone X 256G 低至5000 </h4>
+		    <h4 style="padding-left: 30px">惠普电脑半折促销 </h4>
+          </div>
+			 </div>	
+			
+		<div style="height: 120px;width: 250px;margin-top: 150px">
+			<img style="width: 100%;height: 100%" src="images/承诺.jpg" >
+		</div>
+		</div>
+		</div>
+	</div>
+    </div> 
+  </div>
+	<div style="width: 100%;height: 40px">
+	</div>
+	<div>
+		<h2 class="text-center">人  气  商  品</h2>
+		<div class="row text-center">
+    <div style="height: 300px" class="col-sm-4 col-md-4 col-xs-6 col-lg-2 col-lg-offset-1">
+      <div class="thumbnail"><a href=""> <img style="width: 100%;height: 100%" src="images/电脑/平板1.jpg" alt="Thumbnail Image 1" class="img-responsive"></a>
+       
+      </div>
+    </div>
+    <div class="col-sm-4 col-md-4 col-xs-6 col-lg-2">
+      <div class="thumbnail"><a href=""> <img style="width: 100%;height: 100%" src="images/手机/2.jpg" alt="Thumbnail Image 1" class="img-responsive"></a>
+       
+      </div>
+    </div>
+    <div class="col-sm-4 col-md-4 col-xs-6 col-lg-2">
+      <div class="thumbnail"><a href=""> <img style="width: 100%;height: 100%" src="images/手机/3.jpg" alt="Thumbnail Image 1" class="img-responsive"></a>      
+      </div>
+    </div>
+	<div class="col-sm-4 col-md-4 col-xs-6 col-lg-2">
+      <div class="thumbnail"><a href=""> <img style="width: 100%;height: 100%" src="images/冰箱.jpg" alt="Thumbnail Image 1" class="img-responsive"></a>
+       
+      </div>
+    </div>
+  <div class="col-sm-4 col-md-4 col-xs-6 col-lg-2">
+      <div class="thumbnail"><a href=""> <img style="width: 100%;height: 100%" src="images/手表.jpg" alt="Thumbnail Image 1" class="img-responsive"></a>
+       
+      </div>
+    </div>
+  </div>
+		<div class="row text-center"> </div>
+	</div>
+				
+		    </div>
+		</div>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+<div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="../vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="../vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="../vendors/nprogress/nprogress.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="../build/js/custom.min.js"></script>
+  <script type="text/javascript">
+$(function() {
+	$( "#Slider1" ).slider(); 
+});
+$(function() {
+	$( "#Button1" ).button(); 
+});
+$(function() {
+	$( "#Slider1" ).slider(); 
+});
+  </script>
+  </body>
+</html>
