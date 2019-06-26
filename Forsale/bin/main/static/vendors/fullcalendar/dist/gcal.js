@@ -154,7 +154,7 @@ function transformOptions(sourceOptions, start, end, timezone, calendar) {
 					});
 				});
 
-				// call the success controller(s) and allow it to return a new events array
+				// call the success handler(s) and allow it to return a new events array
 				successArgs = [ events ].concat(Array.prototype.slice.call(arguments, 1)); // forward other jq args
 				successRes = applyAll(success, this, successArgs);
 				if ($.isArray(successRes)) {

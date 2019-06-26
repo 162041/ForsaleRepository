@@ -58,7 +58,7 @@ jQuery.extend( jQuery.event, {
 			event.target = elem;
 		}
 
-		// Clone any incoming data and prepend the event, creating the controller arg list
+		// Clone any incoming data and prepend the event, creating the handler arg list
 		data = data == null ?
 			[ event ] :
 			jQuery.makeArray( data, [ event ] );
@@ -96,14 +96,14 @@ jQuery.extend( jQuery.event, {
 				bubbleType :
 				special.bindType || type;
 
-			// jQuery controller
+			// jQuery handler
 			handle = ( dataPriv.get( cur, "events" ) || {} )[ event.type ] &&
 				dataPriv.get( cur, "handle" );
 			if ( handle ) {
 				handle.apply( cur, data );
 			}
 
-			// Native controller
+			// Native handler
 			handle = ontype && cur[ ontype ];
 			if ( handle && handle.apply && acceptData( cur ) ) {
 				event.result = handle.apply( cur, data );

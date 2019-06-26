@@ -16,7 +16,7 @@
 
 /**
  * @fileoverview
- * Registers a language controller for SQL.
+ * Registers a language handler for SQL.
  *
  *
  * To use, include prettify.js and this file in your HTML page.

@@ -91,7 +91,7 @@ function defaultPrefilter( elem, props, opts ) {
 
 		anim.always( function() {
 
-			// Ensure the complete controller is called before this completes
+			// Ensure the complete handler is called before this completes
 			anim.always( function() {
 				hooks.unqueued--;
 				if ( !jQuery.queue( elem, "fx" ).length ) {

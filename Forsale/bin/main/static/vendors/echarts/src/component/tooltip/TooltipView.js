@@ -354,7 +354,7 @@ define(function (require) {
                 }
             }
             else {
-                var el = api.getZr().controller.findHover(event.x, event.y);
+                var el = api.getZr().handler.findHover(event.x, event.y);
                 this._tryShow({
                     offsetX: event.x,
                     offsetY: event.y,
@@ -409,7 +409,7 @@ define(function (require) {
         },
 
         /**
-         * mousemove controller
+         * mousemove handler
          * @param {Object} e
          * @private
          */

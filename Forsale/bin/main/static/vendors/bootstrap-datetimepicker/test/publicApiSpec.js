@@ -303,7 +303,7 @@ describe('Public API method tests', function () {
                 expect($(document).find('body').find('.bootstrap-datetimepicker-widget').length).toEqual(1);
             });
 
-            it('applies the styles appended in the classify event controller', function () {
+            it('applies the styles appended in the classify event handler', function () {
                 var handler = function (event) {
                     if (event.date.get('weekday') === 4) {
                         event.classNames.push('humpday');

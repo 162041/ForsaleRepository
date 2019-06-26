@@ -20,7 +20,7 @@
 
 /**
  * @fileoverview
- * Registers a language controller for MATLAB.
+ * Registers a language handler for MATLAB.
  *
  * To use, include prettify.js and this file in your HTML page.
  * Then put your code inside an HTML tag like

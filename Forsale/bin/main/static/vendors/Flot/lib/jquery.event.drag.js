@@ -101,16 +101,16 @@ function handler ( event ){
 				returned = hijack( event, "drag", elem ); // trigger "drag"
 				if ( data.drop && $special.drop ){ // manage drop events
 					$special.drop.allowed = ( returned !== false ); // prevent drop
-					$special.drop.controller( event ); // "dropstart", "dropend"
+					$special.drop.handler( event ); // "dropstart", "dropend"
 					}
 				if ( returned !== false ) break; // "drag" not rejected, stop
-				event.type = "mouseup"; // helps "drop" controller behave
+				event.type = "mouseup"; // helps "drop" handler behave
 				}
 		// mouseup, stop dragging
 		case 'mouseup':
 			$event.remove( document, "mousemove mouseup", handler ); // remove page events
 			if ( drag.dragging ){
-				if ( data.drop && $special.drop ) $special.drop.controller( event ); // "drop"
+				if ( data.drop && $special.drop ) $special.drop.handler( event ); // "drop"
 				hijack( event, "dragend", elem ); // trigger "dragend"
 				}
 			selectable( elem, true ); // enable text selection

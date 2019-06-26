@@ -2,7 +2,7 @@
 
 /**
  * @fileoverview
- * Registers a language controller for YAML.
+ * Registers a language handler for YAML.
  *
  * @author ribrdb
  */

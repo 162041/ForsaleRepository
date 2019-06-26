@@ -2,7 +2,7 @@
 
 /**
  * @fileoverview
- * Registers a language controller for Basic.
+ * Registers a language handler for Basic.
  *
  * To use, include prettify.js and this file in your HTML page.
  * Then put your code in an HTML tag like

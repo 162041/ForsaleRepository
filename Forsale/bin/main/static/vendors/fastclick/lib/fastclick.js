@@ -158,8 +158,8 @@
 			};
 		}
 
-		// If a controller is already declared in the element's onclick attribute, it will be fired before
-		// FastClick's onClick controller. Fix this by pulling out the user-defined controller function and
+		// If a handler is already declared in the element's onclick attribute, it will be fired before
+		// FastClick's onClick handler. Fix this by pulling out the user-defined handler function and
 		// adding it as listener.
 		if (typeof layer.onclick === 'function') {
 

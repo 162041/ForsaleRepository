@@ -16,7 +16,7 @@
 
 /**
  * @fileoverview
- * Registers a language controller for Clojure.
+ * Registers a language handler for Clojure.
  *
  *
  * To use, include prettify.js and this file in your HTML page.

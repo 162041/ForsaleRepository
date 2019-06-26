@@ -16,7 +16,7 @@
 
 /**
  * @fileoverview
- * Registers a language controller Dart.
+ * Registers a language handler Dart.
  * Loosely structured based on the DartLexer in Pygments: http://pygments.org/.
  *
  * To use, include prettify.js and this file in your HTML page.

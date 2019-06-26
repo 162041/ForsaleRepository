@@ -15,7 +15,7 @@
 
 /**
  * @fileoverview
- * Registers a language controller for Erlang.
+ * Registers a language handler for Erlang.
  *
  * Derived from https://raw.github.com/erlang/otp/dev/lib/compiler/src/core_parse.yrl
  * Modified from Mike Samuel's Haskell plugin for google-code-prettify

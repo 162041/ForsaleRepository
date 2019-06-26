@@ -15839,7 +15839,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    var domHandlers = {
 	        /**
-	         * Mouse move controller
+	         * Mouse move handler
 	         * @inner
 	         * @param {Event} event
 	         */
@@ -15870,7 +15870,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        },
 
 	        /**
-	         * Mouse out controller
+	         * Mouse out handler
 	         * @inner
 	         * @param {Event} event
 	         */
@@ -27223,7 +27223,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	         */
 	        this._zr = zr;
 
-	        // Avoid two roamController bind the same controller
+	        // Avoid two roamController bind the same handler
 	        var bind = zrUtil.bind;
 	        var mousedownHandler = bind(mousedown, this);
 	        var mousemoveHandler = bind(mousemove, this);
@@ -29376,7 +29376,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                }
 	            }
 	            else {
-	                var el = api.getZr().controller.findHover(event.x, event.y);
+	                var el = api.getZr().handler.findHover(event.x, event.y);
 	                this._tryShow({
 	                    offsetX: event.x,
 	                    offsetY: event.y,
@@ -29431,7 +29431,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        },
 
 	        /**
-	         * mousemove controller
+	         * mousemove handler
 	         * @param {Object} e
 	         * @private
 	         */
@@ -30316,7 +30316,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            if (!self.enterable) {
 	                // Try trigger zrender event to avoid mouse
 	                // in and out shape too frequently
-	                var handler = zr.controller;
+	                var handler = zr.handler;
 	                eventUtil.normalizeEvent(container, e);
 	                handler.dispatch('mousemove', e);
 	            }
@@ -33027,7 +33027,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        ecModel.eachComponent('dataZoom', function (dataZoomModel) {
 	            // We calculate window and reset axis here but not in model
-	            // init stage and not after action dispatch controller, because
+	            // init stage and not after action dispatch handler, because
 	            // reset should be called after seriesData.restoreData.
 	            dataZoomModel.eachTargetAxis(resetSingleAxis);
 

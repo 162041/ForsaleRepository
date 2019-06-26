@@ -352,7 +352,7 @@ function verifyLoggingCallbacks() {
 	var onErrorFnPrev = window.onerror;
 
 	// Cover uncaught exceptions
-	// Returning true will suppress the default browser controller,
+	// Returning true will suppress the default browser handler,
 	// returning false will let it run.
 	window.onerror = function( error, filePath, linerNr ) {
 		var ret = false;

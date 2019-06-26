@@ -51,7 +51,7 @@
       bindType: $.support.transition.end,
       delegateType: $.support.transition.end,
       handle: function (e) {
-        if ($(e.target).is(this)) return e.handleObj.controller.apply(this, arguments)
+        if ($(e.target).is(this)) return e.handleObj.handler.apply(this, arguments)
       }
     }
   })

@@ -2928,18 +2928,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * Element.click
 	     [ method ]
 	     **
-	     * Adds event controller for click for the element.
+	     * Adds event handler for click for the element.
 	     > Parameters
-	     - controller (function) controller for the event
+	     - handler (function) handler for the event
 	     = (object) @Element
 	    \*/
 	    /*\
 	     * Element.unclick
 	     [ method ]
 	     **
-	     * Removes event controller for click for the element.
+	     * Removes event handler for click for the element.
 	     > Parameters
-	     - controller (function) #optional controller for the event
+	     - handler (function) #optional handler for the event
 	     = (object) @Element
 	    \*/
 
@@ -2947,18 +2947,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * Element.dblclick
 	     [ method ]
 	     **
-	     * Adds event controller for double click for the element.
+	     * Adds event handler for double click for the element.
 	     > Parameters
-	     - controller (function) controller for the event
+	     - handler (function) handler for the event
 	     = (object) @Element
 	    \*/
 	    /*\
 	     * Element.undblclick
 	     [ method ]
 	     **
-	     * Removes event controller for double click for the element.
+	     * Removes event handler for double click for the element.
 	     > Parameters
-	     - controller (function) #optional controller for the event
+	     - handler (function) #optional handler for the event
 	     = (object) @Element
 	    \*/
 
@@ -2966,18 +2966,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * Element.mousedown
 	     [ method ]
 	     **
-	     * Adds event controller for mousedown for the element.
+	     * Adds event handler for mousedown for the element.
 	     > Parameters
-	     - controller (function) controller for the event
+	     - handler (function) handler for the event
 	     = (object) @Element
 	    \*/
 	    /*\
 	     * Element.unmousedown
 	     [ method ]
 	     **
-	     * Removes event controller for mousedown for the element.
+	     * Removes event handler for mousedown for the element.
 	     > Parameters
-	     - controller (function) #optional controller for the event
+	     - handler (function) #optional handler for the event
 	     = (object) @Element
 	    \*/
 
@@ -2985,18 +2985,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * Element.mousemove
 	     [ method ]
 	     **
-	     * Adds event controller for mousemove for the element.
+	     * Adds event handler for mousemove for the element.
 	     > Parameters
-	     - controller (function) controller for the event
+	     - handler (function) handler for the event
 	     = (object) @Element
 	    \*/
 	    /*\
 	     * Element.unmousemove
 	     [ method ]
 	     **
-	     * Removes event controller for mousemove for the element.
+	     * Removes event handler for mousemove for the element.
 	     > Parameters
-	     - controller (function) #optional controller for the event
+	     - handler (function) #optional handler for the event
 	     = (object) @Element
 	    \*/
 
@@ -3004,18 +3004,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * Element.mouseout
 	     [ method ]
 	     **
-	     * Adds event controller for mouseout for the element.
+	     * Adds event handler for mouseout for the element.
 	     > Parameters
-	     - controller (function) controller for the event
+	     - handler (function) handler for the event
 	     = (object) @Element
 	    \*/
 	    /*\
 	     * Element.unmouseout
 	     [ method ]
 	     **
-	     * Removes event controller for mouseout for the element.
+	     * Removes event handler for mouseout for the element.
 	     > Parameters
-	     - controller (function) #optional controller for the event
+	     - handler (function) #optional handler for the event
 	     = (object) @Element
 	    \*/
 
@@ -3023,18 +3023,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * Element.mouseover
 	     [ method ]
 	     **
-	     * Adds event controller for mouseover for the element.
+	     * Adds event handler for mouseover for the element.
 	     > Parameters
-	     - controller (function) controller for the event
+	     - handler (function) handler for the event
 	     = (object) @Element
 	    \*/
 	    /*\
 	     * Element.unmouseover
 	     [ method ]
 	     **
-	     * Removes event controller for mouseover for the element.
+	     * Removes event handler for mouseover for the element.
 	     > Parameters
-	     - controller (function) #optional controller for the event
+	     - handler (function) #optional handler for the event
 	     = (object) @Element
 	    \*/
 
@@ -3042,18 +3042,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * Element.mouseup
 	     [ method ]
 	     **
-	     * Adds event controller for mouseup for the element.
+	     * Adds event handler for mouseup for the element.
 	     > Parameters
-	     - controller (function) controller for the event
+	     - handler (function) handler for the event
 	     = (object) @Element
 	    \*/
 	    /*\
 	     * Element.unmouseup
 	     [ method ]
 	     **
-	     * Removes event controller for mouseup for the element.
+	     * Removes event handler for mouseup for the element.
 	     > Parameters
-	     - controller (function) #optional controller for the event
+	     - handler (function) #optional handler for the event
 	     = (object) @Element
 	    \*/
 
@@ -3061,18 +3061,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * Element.touchstart
 	     [ method ]
 	     **
-	     * Adds event controller for touchstart for the element.
+	     * Adds event handler for touchstart for the element.
 	     > Parameters
-	     - controller (function) controller for the event
+	     - handler (function) handler for the event
 	     = (object) @Element
 	    \*/
 	    /*\
 	     * Element.untouchstart
 	     [ method ]
 	     **
-	     * Removes event controller for touchstart for the element.
+	     * Removes event handler for touchstart for the element.
 	     > Parameters
-	     - controller (function) #optional controller for the event
+	     - handler (function) #optional handler for the event
 	     = (object) @Element
 	    \*/
 
@@ -3080,18 +3080,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * Element.touchmove
 	     [ method ]
 	     **
-	     * Adds event controller for touchmove for the element.
+	     * Adds event handler for touchmove for the element.
 	     > Parameters
-	     - controller (function) controller for the event
+	     - handler (function) handler for the event
 	     = (object) @Element
 	    \*/
 	    /*\
 	     * Element.untouchmove
 	     [ method ]
 	     **
-	     * Removes event controller for touchmove for the element.
+	     * Removes event handler for touchmove for the element.
 	     > Parameters
-	     - controller (function) #optional controller for the event
+	     - handler (function) #optional handler for the event
 	     = (object) @Element
 	    \*/
 
@@ -3099,18 +3099,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * Element.touchend
 	     [ method ]
 	     **
-	     * Adds event controller for touchend for the element.
+	     * Adds event handler for touchend for the element.
 	     > Parameters
-	     - controller (function) controller for the event
+	     - handler (function) handler for the event
 	     = (object) @Element
 	    \*/
 	    /*\
 	     * Element.untouchend
 	     [ method ]
 	     **
-	     * Removes event controller for touchend for the element.
+	     * Removes event handler for touchend for the element.
 	     > Parameters
-	     - controller (function) #optional controller for the event
+	     - handler (function) #optional handler for the event
 	     = (object) @Element
 	    \*/
 
@@ -3118,18 +3118,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * Element.touchcancel
 	     [ method ]
 	     **
-	     * Adds event controller for touchcancel for the element.
+	     * Adds event handler for touchcancel for the element.
 	     > Parameters
-	     - controller (function) controller for the event
+	     - handler (function) handler for the event
 	     = (object) @Element
 	    \*/
 	    /*\
 	     * Element.untouchcancel
 	     [ method ]
 	     **
-	     * Removes event controller for touchcancel for the element.
+	     * Removes event handler for touchcancel for the element.
 	     > Parameters
-	     - controller (function) #optional controller for the event
+	     - handler (function) #optional handler for the event
 	     = (object) @Element
 	    \*/
 	    for (var i = events.length; i--;) {
@@ -3234,10 +3234,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	     **
 	     * Adds event handlers for hover for the element.
 	     > Parameters
-	     - f_in (function) controller for hover in
-	     - f_out (function) controller for hover out
-	     - icontext (object) #optional context for hover in controller
-	     - ocontext (object) #optional context for hover out controller
+	     - f_in (function) handler for hover in
+	     - f_out (function) handler for hover out
+	     - icontext (object) #optional context for hover in handler
+	     - ocontext (object) #optional context for hover out handler
 	     = (object) @Element
 	    \*/
 	    elproto.hover = function (f_in, f_out, scope_in, scope_out) {
@@ -3249,8 +3249,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	     **
 	     * Removes event handlers for hover for the element.
 	     > Parameters
-	     - f_in (function) controller for hover in
-	     - f_out (function) controller for hover out
+	     - f_in (function) handler for hover in
+	     - f_out (function) handler for hover out
 	     = (object) @Element
 	    \*/
 	    elproto.unhover = function (f_in, f_out) {
@@ -3263,27 +3263,27 @@ return /******/ (function(modules) { // webpackBootstrap
 	     **
 	     * Adds event handlers for drag of the element.
 	     > Parameters
-	     - onmove (function) controller for moving
-	     - onstart (function) controller for drag start
-	     - onend (function) controller for drag end
-	     - mcontext (object) #optional context for moving controller
-	     - scontext (object) #optional context for drag start controller
-	     - econtext (object) #optional context for drag end controller
+	     - onmove (function) handler for moving
+	     - onstart (function) handler for drag start
+	     - onend (function) handler for drag end
+	     - mcontext (object) #optional context for moving handler
+	     - scontext (object) #optional context for drag start handler
+	     - econtext (object) #optional context for drag end handler
 	     * Additionaly following `drag` events will be triggered: `drag.start.<id>` on start,
 	     * `drag.end.<id>` on end and `drag.move.<id>` on every move. When element will be dragged over another element
 	     * `drag.over.<id>` will be fired as well.
 	     *
-	     * Start event and start controller will be called in specified context or in context of the element with following parameters:
+	     * Start event and start handler will be called in specified context or in context of the element with following parameters:
 	     o x (number) x position of the mouse
 	     o y (number) y position of the mouse
 	     o event (object) DOM event object
-	     * Move event and move controller will be called in specified context or in context of the element with following parameters:
+	     * Move event and move handler will be called in specified context or in context of the element with following parameters:
 	     o dx (number) shift by x from the start point
 	     o dy (number) shift by y from the start point
 	     o x (number) x position of the mouse
 	     o y (number) y position of the mouse
 	     o event (object) DOM event object
-	     * End event and end controller will be called in specified context or in context of the element with following parameters:
+	     * End event and end handler will be called in specified context or in context of the element with following parameters:
 	     o event (object) DOM event object
 	     = (object) @Element
 	    \*/
@@ -3325,9 +3325,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * Element.onDragOver
 	     [ method ]
 	     **
-	     * Shortcut for assigning event controller for `drag.over.<id>` event, where id is id of the element (see @Element.id).
+	     * Shortcut for assigning event handler for `drag.over.<id>` event, where id is id of the element (see @Element.id).
 	     > Parameters
-	     - f (function) controller for event, first argument would be the element you are dragging over
+	     - f (function) handler for event, first argument would be the element you are dragging over
 	    \*/
 	    elproto.onDragOver = function (f) {
 	        f ? eve.on("raphael.drag.over." + this.id, f) : eve.unbind("raphael.drag.over." + this.id);

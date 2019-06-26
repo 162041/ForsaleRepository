@@ -15,7 +15,7 @@
 
 /**
  * @fileoverview
- * Registers a language controller for S, S-plus, and R source code.
+ * Registers a language handler for S, S-plus, and R source code.
  *
  *
  * To use, include prettify.js and this file in your HTML page.

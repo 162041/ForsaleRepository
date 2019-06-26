@@ -1031,7 +1031,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
     // Determine which element will have `parsley-error` and `parsley-success` classes
     _manageClassHandler: function _manageClassHandler() {
-      // An element selector could be passed through DOM with `data-parsley-class-controller=#foo`
+      // An element selector could be passed through DOM with `data-parsley-class-handler=#foo`
       if ('string' === typeof this.options.classHandler && $(this.options.classHandler).length) return $(this.options.classHandler);
 
       // Class handled could also be determined by function given in Parsley options
@@ -2070,7 +2070,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     ParsleyUtils__default.warnOnce("Parsley's pubsub module is deprecated; use the 'on' and 'off' methods on parsley instances or window.Parsley");
   };
 
-  // Returns an event controller that calls `fn` with the arguments it expects
+  // Returns an event handler that calls `fn` with the arguments it expects
   function adapt(fn, context) {
     // Store to allow unbinding
     if (!fn.parsleyAdaptedCallback) {
@@ -2320,7 +2320,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
       behavesOk: function behavesOk(evt) {
         if (_this13.isNativeEvent(evt)) {
-          $(document) // Simply unbinds the testing controller
+          $(document) // Simply unbinds the testing handler
           .off('input.inputevent', evt.data.selector, _this13.behavesOk).off('change.inputevent', evt.data.selector, _this13.misbehaves);
         }
       },

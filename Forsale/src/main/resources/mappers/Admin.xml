@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.s162041.Forsale.dao.AdminDao">
+
+    <resultMap id="Admin" type="Admin">
+        <id property="aid" column="AID"/>
+        <result property="aname" column="Aname"/>
+        <result property="apassword" column="Apassword"/>
+        <result property="atel" column="Atel"/>
+        <result property="apicture" column="Apicture"/>
+    </resultMap>
+
+    <update id="editAdmin">
+        update Admin set Aname=#{aname} ,Apassword=#{apassword},Atel=#{atel} where AID=#{aid}
+    </update>
+
+</mapper>

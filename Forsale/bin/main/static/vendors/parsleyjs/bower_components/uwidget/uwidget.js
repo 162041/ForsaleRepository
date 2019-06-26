@@ -35,7 +35,7 @@
       this._xhrCache = {};
 
       if (!this.options.url || !this.options.handler || !this.options.template)
-        throw new Error('You must define a widget url, an ajax controller and a template');
+        throw new Error('You must define a widget url, an ajax handler and a template');
 
       this
         ._initActions()

@@ -16,7 +16,7 @@
 
 /**
  * @fileoverview
- * Registers a language controller for OCaml, SML, F# and similar languages.
+ * Registers a language handler for OCaml, SML, F# and similar languages.
  *
  * Based on the lexical grammar at
  * http://research.microsoft.com/en-us/um/cambridge/projects/fsharp/manual/spec.html#_Toc270597388

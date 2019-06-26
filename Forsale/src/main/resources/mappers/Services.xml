@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.s162041.Forsale.dao.ServiceDao">
+
+    <resultMap id="Services" type="Services">
+        <id property="kid" column="KID"/>
+        <result property="kname" column="Kname"/>
+        <result property="kpassword" column="Kpassword"/>
+        <result property="ktel" column="Ktel"/>
+
+    </resultMap>
+
+    <select id="getServiceList" resultMap="Services">
+        select * from service
+    </select>
+    <insert id="addService" >
+        insert into service (KID,Kname,Kpassword,Ktel) VALUES ((select uuid()),#{kname},#{kpassword},#{ktel})
+    </insert>
+    <delete id="deleteServiceById" >
+        delete  from service where kid=#{id}
+    </delete>
+
+
+</mapper>

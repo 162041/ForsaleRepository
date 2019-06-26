@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>用户管理 | 二手平台后台管理</title>
+
+  <!-- Bootstrap -->
+  <link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <!-- NProgress -->
+  <link href="/vendors/nprogress/nprogress.css" rel="stylesheet">
+  <!-- iCheck -->
+  <link href="/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+  <!-- Datatables -->
+  <link href="/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+  <link href="/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+  <link href="/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+  <link href="/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+  <link href="/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom Theme Style -->
+  <link href="/build/css/custom.min.css" rel="stylesheet">
+</head>
+
+<script type="text/javascript">
+    function selectAll(){
+        if ($("#SelectAll").is(":checked")) {
+            $(":checkbox").prop("checked", true);//所有选择框都选中
+        } else {
+            $(":checkbox").prop("checked", false);
+        }
+    }
+</script>
+
+<body class="nav-md">
+<div th:object=" ${session. admin}"  class="container body">
+  <div class="main_container">
+    <div class="col-md-3 left_col">
+      <div class="left_col scroll-view">
+        <div class="navbar nav_title" style="border: 0;">
+          <a href="/login" class="site_title"><i class="fa fa-paw"></i> <span>二手平台后台管理</span></a>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <!-- menu profile quick info -->
+        <div class="profile clearfix">
+          <div class="profile_pic">
+            <img src="../images/img.jpg" alt="..." class="img-circle profile_img">
+          </div>
+          <div class="profile_info">
+              <span>Welcome,</span>
+              <h2 th:text="*{aname}"></h2>
+            </div>
+        </div>
+        <!-- /menu profile quick info -->
+
+        <br />
+
+        <!-- sidebar menu -->
+        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+          <div class="menu_section">
+            <h3>二手平台</h3>
+            <ul class="nav side-menu">
+              <li><a><i class="fa fa-home"></i> 用户管理 <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                  <li><a href="/user/buyer">买家管理</a></li>
+                  <li><a href="/user/seller">卖家管理</a></li>
+                  <li><a href="/services">客服管理</a></li>
+                </ul>
+              </li>
+              <li><a><i class="fa fa-edit"></i>其他事务<span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+
+                  <li><a href="/orders">订单处理</a></li>
+                  <li><a href="/showEdit">修改个人信息</a></li>
+                  <li><a href="/getAnnounceList">发布公告</a></li>
+                </ul>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- top navigation -->
+    <div class="top_nav">
+      <div class="nav_menu">
+        <nav>
+          <div class="nav toggle">
+            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- /top navigation -->
+
+    <!-- page content -->
+    <div class="right_col" role="main">
+    <form  method="post" action="/editAdmin" id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
+      <input name="aid" th:value="*{aid}" type="hidden"/><!--form表单提交隐藏域  -->
+      <div class="form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">姓名 <span class="required">*</span>
+        </label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <input readonly name="aname" th:value="*{aname}"  type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12 parsley-success" data-parsley-id="5"><ul class="parsley-errors-list" id="parsley-id-5"></ul>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="pwd">密码 <span class="required">*</span>
+        </label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <input name="apassword" th:value="*{apassword}" type="password" id="pwd"  required="required" class="form-control col-md-7 col-xs-12 parsley-success" data-parsley-id="7"><ul class="parsley-errors-list" id="parsley-id-7"></ul>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="confirmpwd">确认密码 <span class="required">*</span>
+        </label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <input type="password" th:value="*{apassword}" id="confirmpwd"  required="required" class="form-control col-md-7 col-xs-12 parsley-success" data-parsley-id="7"><ul class="parsley-errors-list" id="parsley-id-7"></ul>
+        </div>
+        <p id="msg_pwd" style="margin-left: 50px;margin-top: 8px;"></p>
+      </div>
+
+      <div class="form-group">
+        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">手机号<span class="required">*</span></label>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <input name="atel" th:value="*{atel}"  id="middle-name" class="form-control col-md-7 col-xs-12" type="text"  data-parsley-id="9">
+        </div>
+      </div>
+      <div class="ln_solid"></div>
+      <div class="form-group">
+        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+          <button class="btn btn-primary" type="reset">重置</button>
+          <button id="confirm" type="submit" class="btn btn-success">确认修改</button>
+        </div>
+      </div>
+
+    </form>
+    </div>
+
+    <!-- footer content -->
+    <footer>
+      <div class="pull-right">
+        Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+      </div>
+      <div class="clearfix"></div>
+    </footer>
+    <!-- /footer content -->
+  </div>
+</div>
+
+<!-- jQuery -->
+<script src="/vendors/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="/vendors/fastclick/lib/fastclick.js"></script>
+<!-- NProgress -->
+<script src="/vendors/nprogress/nprogress.js"></script>
+<!-- iCheck -->
+<script src="/vendors/iCheck/icheck.min.js"></script>
+<!-- Datatables -->
+<script src="/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script src="/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+<script src="/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script src="/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script src="/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+<script src="/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+<script src="/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+<script src="/vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+<script src="/vendors/jszip/dist/jszip.min.js"></script>
+<script src="/vendors/pdfmake/build/pdfmake.min.js"></script>
+<script src="/vendors/pdfmake/build/vfs_fonts.js"></script>
+
+<!-- Custom Theme Scripts -->
+<script src="/build/js/custom.min.js"></script>
+
+<script>
+   /* function edit() {
+        var name=document.getElementById('first-name').value;
+        var tel =document.getElementById('middle-name').value;
+        var password =document.getElementById('last-name').value;
+        $.ajax({
+            url : "/editAdmin",
+            type : "post",
+            async : false,
+            data:{aname:name,atel:tel,apassword:password},
+            success : function(data){
+                if(data==0){
+                    alert("修改成功");
+                }
+                alert("修改失败");
+            }
+        });
+    }*/
+
+   $(document).ready(function () {
+       $('#confirmpwd').on('input propertychange', function () {
+           var pwd = $.trim($(this).val());
+           var rpwd = $.trim($("#pwd").val());
+           if (pwd == "" && rpwd == "") {
+               $("#msg_pwd").html("<font color='red'>密码不能为空</font>");
+           } else {
+               if (pwd == rpwd) {
+                   $("#msg_pwd").html("<font color='green'>两次密码匹配通过</font>");
+                   $("#confirm").attr("disabled", false);
+               } else {
+                   $("#msg_pwd").html("<font color='red'>两次密码不匹配</font>");
+                   $("#confirm").attr("disabled", true);
+               }
+           }
+       })
+   })
+
+
+</script>
+
+</body>
+</html>

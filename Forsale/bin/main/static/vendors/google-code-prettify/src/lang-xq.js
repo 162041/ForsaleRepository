@@ -16,7 +16,7 @@
 
 /**
  * @fileoverview
- * Registers a language controller for XQuery.
+ * Registers a language handler for XQuery.
  *
  * To use, include prettify.js and this file in your HTML page.
  * Then put your code in an HTML tag like

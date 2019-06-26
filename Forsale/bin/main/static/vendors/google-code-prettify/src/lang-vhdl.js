@@ -1,6 +1,6 @@
 /**
  * @fileoverview
- * Registers a language controller for VHDL '93.
+ * Registers a language handler for VHDL '93.
  *
  * Based on the lexical grammar and keywords at
  * http://www.iis.ee.ethz.ch/~zimmi/download/vhdl93_syntax.html

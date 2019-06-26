@@ -16,7 +16,7 @@
 
 /**
  * @fileoverview
- * Registers a language controller for Lua.
+ * Registers a language handler for Lua.
  *
  *
  * To use, include prettify.js and this file in your HTML page.

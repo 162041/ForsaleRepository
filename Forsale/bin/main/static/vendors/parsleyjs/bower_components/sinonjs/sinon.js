@@ -3228,7 +3228,7 @@ sinon.xhr = { XMLHttpRequest: this.XMLHttpRequest };
                 try {
                     this.onreadystatechange();
                 } catch (e) {
-                    sinon.logError("Fake XHR onreadystatechange controller", e);
+                    sinon.logError("Fake XHR onreadystatechange handler", e);
                 }
             }
 

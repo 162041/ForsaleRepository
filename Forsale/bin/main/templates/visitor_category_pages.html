@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>分类</title>
+
+    <!-- Bootstrap -->
+    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="../build/css/custom.min.css" rel="stylesheet">
+  </head>
+
+  <body class="nav-md">
+  <div class="container body">
+    <div class="main_container">
+      <div class="col-md-3 left_col">
+        <div class="left_col scroll-view">
+          <div class="navbar nav_title" style="border: 0;">
+            <a href="/" class="site_title"><i class="fa fa-paw"></i> <span>校园二手交易市场</span></a>
+          </div>
+
+          <div class="clearfix"></div>
+
+          <!-- menu profile quick info -->
+          <div class="profile clearfix">
+            <div class="profile_pic">
+              <img src="images/user.png"  class="img-circle profile_img">
+            </div>
+            <div class="profile_info">
+              <a style="font-size: 17px" href="login"> 请登录</a>
+            </div>
+          </div>
+          <!-- /menu profile quick info -->
+
+          <br />
+
+          <!-- sidebar menu -->
+          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section">
+              <h3>交易市场</h3>
+              <ul class="nav side-menu">
+                <li><a href="/"><i class="fa fa-home"></i>首页</a>
+
+                </li>
+                <li><a><i class="fa fa-female"></i> 服装与包市场 <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li><a href="visitor_category_pages?Gtype=男装">男装</a></li>
+                    <li><a href="visitor_category_pages?Gtype=女装">女装</a></li>
+                    <li><a href="visitor_category_pages?Gtype=男鞋">男鞋</a></li>
+                    <li><a href="visitor_category_pages?Gtype=女鞋">女鞋</a></li>
+                    <li><a href="visitor_category_pages?Gtype=女包">女包</a></li>
+                  </ul>
+                </li>
+                <li><a><i class="fa fa-laptop"></i> 手机数码市场 <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li><a href="visitor_category_pages?Gtype=手机">手机</a></li>
+                    <li><a href="visitor_category_pages?Gtype=笔记本电脑">笔记本电脑</a></li>
+                    <li><a href="visitor_category_pages?Gtype=平板电脑">平板电脑</a></li>
+                    <li><a href="visitor_category_pages?Gtype=单反相机">单反相机</a></li>
+                    <li><a href="visitor_category_pages?Gtype=键盘鼠标">键盘鼠标</a></li>
+                    <li><a href="visitor_category_pages?Gtype=智能手环">智能手环</a></li>
+                  </ul>
+                </li>
+                <li><a><i class="fa fa-book"></i> 图书市场 <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li><a href="visitor_category_pages?Gtype=教学图书">教学图书</a></li>
+                    <li><a href="visitor_category_pages?Gtype=娱乐图书">娱乐图书</a></li>
+                  </ul>
+                </li>
+                <li><a><i class="fa fa-bicycle"></i> 电器与代步市场 <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li><a href="visitor_category_pages?Gtype=洗衣机">洗衣机</a></li>
+                    <li><a href="visitor_category_pages?Gtype=冰箱">冰箱</a></li>
+                    <li><a href="visitor_category_pages?Gtype=空调">空调</a></li>
+                    <li><a href="visitor_category_pages?Gtype=自行车">自行车</a></li>
+                    <li><a href="visitor_category_pages?Gtype=电动车">电动车</a></li>
+                  </ul>
+                </li>
+                <li><a><em class="fa fa-futbol-o"></em>运动市场 <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li><a href="visitor_category_pages?Gtype=体育用品">体育用品</a></li>
+                    <li><a href="visitor_category_pages?Gtype=健身器材">健身器材</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- /sidebar menu -->
+
+        </div>
+      </div>
+
+      <!-- top navigation -->
+      <div class="top_nav">
+        <div class="nav_menu">
+          <nav>
+            <div class="nav toggle">
+              <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+            </div>
+
+          </nav>
+        </div>
+
+      </div>
+      <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3>商品</h3>
+              </div>
+
+              <div class="title_right">
+                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                  <form action="visitor_search" method="post">
+                    <div class="input-group col-lg-8">
+                      <input type="text" name="Gname" class="form-control" placeholder="Search for...">
+                      <span class="input-group-btn">
+                      <button class="btn btn-default"  type="submit">Go!</button>
+                    </span>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div style="height: 1200px" class="x_panel">
+                  <div class="x_title">
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <tbody>
+                    <tr th:each="Goods,status : ${goodsList}">
+                      <div class="col-md-2">
+                        <div class="thumbnail">
+                          <div class="image view view-first">
+                            <a th:href="@{'visitor_goods_details?GID='+${Goods.gid}}">
+                              <img style="width: 100%;height: 100%;align-content: center ;display: block;" th:src="@{${Goods.gpicture}}" />
+                            </a>
+                          </div>
+                          <div style="font-size: 20px">
+                          <strong th:text="${Goods.gname}"></strong>
+                          </div>
+                          <div style="color: #f40;font-size: 15px">
+                              ￥
+                              <strong th:text="${Goods.gprices}"></strong>
+                          </div>
+                        </div>
+                      </div>
+                    </tr>
+                    </tbody>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="../vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="../vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="../vendors/nprogress/nprogress.js"></script>
+    
+    <!-- Custom Theme Scripts -->
+    <script src="../build/js/custom.min.js"></script>
+  </body>
+</html>

@@ -15827,7 +15827,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    var domHandlers = {
 	        /**
-	         * Mouse move controller
+	         * Mouse move handler
 	         * @inner
 	         * @param {Event} event
 	         */
@@ -15858,7 +15858,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        },
 
 	        /**
-	         * Mouse out controller
+	         * Mouse out handler
 	         * @inner
 	         * @param {Event} event
 	         */

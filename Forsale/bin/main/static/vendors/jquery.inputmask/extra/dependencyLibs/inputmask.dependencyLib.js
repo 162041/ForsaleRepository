@@ -191,7 +191,7 @@
 					var nsEvent = _events[endx].split("."),
 						offEvents = resolveNamespace(nsEvent[0], nsEvent[1]);
 					for (var i = 0, offEventsL = offEvents.length; i < offEventsL; i++) {
-						removeEvent(offEvents[i].ev, offEvents[i].namespace, offEvents[i].controller);
+						removeEvent(offEvents[i].ev, offEvents[i].namespace, offEvents[i].handler);
 					}
 				}
 			}

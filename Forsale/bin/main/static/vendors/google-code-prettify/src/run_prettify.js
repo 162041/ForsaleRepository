@@ -21,7 +21,7 @@
 // | autorun=         | true | false  | If true then prettyPrint()   | "true" |
 // |                  |               | is called on page load.      |        |
 // +------------------+---------------+------------------------------+--------+
-// | lang=            | language name | Loads the language controller   | Can    |
+// | lang=            | language name | Loads the language handler   | Can    |
 // |                  |               | named "lang-<NAME>.js".      | appear |
 // |                  |               | See available handlers at    | many   |
 // |                  |               | http://code.google.com/p/    | times. |
@@ -45,7 +45,7 @@
 
 // Exmaples
 // .../prettify.js?lang=css&skin=sunburst
-//   1. Loads the CSS language controller which can be used to prettify CSS
+//   1. Loads the CSS language handler which can be used to prettify CSS
 //      stylesheets, HTML <style> element bodies and style="..." attributes
 //      values.
 //   2. Loads the sunburst.css stylesheet instead of the default prettify.css
@@ -794,7 +794,7 @@ var IN_GLOBAL_SCOPE = false;
       }
     
       /**
-       * Apply the given language controller to sourceCode and add the resulting
+       * Apply the given language handler to sourceCode and add the resulting
        * decorations to out.
        * @param {number} basePos the index of sourceCode within the chunk of source
        *    whose decorations are already present on out.
@@ -851,7 +851,7 @@ var IN_GLOBAL_SCOPE = false;
         * language of the portion of the token in $1 after pattern executes.
         * E.g., if style is 'lang-lisp', and group 1 contains the text
         * '(hello (world))', then that portion of the token will be passed to the
-        * registered lisp controller for formatting.
+        * registered lisp handler for formatting.
         * The text before and after group 1 will be restyled using this decorator
         * so decorators should take care that this doesn't result in infinite
         * recursion.  For example, the HTML lexer rule for SCRIPT elements looks
@@ -859,7 +859,7 @@ var IN_GLOBAL_SCOPE = false;
         * '<script>foo()<\/script>', which would cause the current decorator to
         * be called with '<script>' which would not match the same rule since
         * group 1 must not be empty, so it would be instead styled as PR_TAG by
-        * the generic tag rule.  The controller registered for the 'js' extension would
+        * the generic tag rule.  The handler registered for the 'js' extension would
         * then be called with 'foo()', and finally, the current decorator would
         * be called with '<\/script>' which would not match the original rule and
         * so the generic tag rule would identify it as a tag.
@@ -1458,7 +1458,7 @@ var IN_GLOBAL_SCOPE = false;
     
       /** Maps language-specific file extensions to handlers. */
       var langHandlerRegistry = {};
-      /** Register a language controller for the given file extensions.
+      /** Register a language handler for the given file extensions.
         * @param {function (Object)} handler a function from source code to a list
         *      of decorations.  Takes a single argument job which describes the
         *      state of the computation.   The single parameter has the form
@@ -1467,7 +1467,7 @@ var IN_GLOBAL_SCOPE = false;
         *        decorations: {Array.<number|string>} an array of style classes
         *                     preceded by the position at which they start in
         *                     job.sourceCode in order.
-        *                     The language controller should assigned this field.
+        *                     The language handler should assigned this field.
         *        basePos: {int} the position of source in the larger source chunk.
         *                 All positions in the output decorations array are relative
         *                 to the larger source chunk.
@@ -1480,7 +1480,7 @@ var IN_GLOBAL_SCOPE = false;
           if (!langHandlerRegistry.hasOwnProperty(ext)) {
             langHandlerRegistry[ext] = handler;
           } else if (win['console']) {
-            console['warn']('cannot override language controller %s', ext);
+            console['warn']('cannot override language handler %s', ext);
           }
         }
       }
@@ -1611,7 +1611,7 @@ var IN_GLOBAL_SCOPE = false;
           job.spans = sourceAndSpans.spans;
           job.basePos = 0;
     
-          // Apply the appropriate language controller
+          // Apply the appropriate language handler
           langHandlerForExtension(opt_langExtension, source)(job);
     
           // Integrate the decorations and tags back into the source code,
@@ -1755,7 +1755,7 @@ var IN_GLOBAL_SCOPE = false;
                 // If the classes includes a language extensions, use it.
                 // Language extensions can be specified like
                 //     <pre class="prettyprint lang-cpp">
-                // the language extension "cpp" is used to find a language controller
+                // the language extension "cpp" is used to find a language handler
                 // as passed to PR.registerLangHandler.
                 // HTML5 recommends that a language be specified using "language-"
                 // as the prefix instead.  Google Code Prettify supports both.

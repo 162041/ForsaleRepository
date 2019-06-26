@@ -16,7 +16,7 @@
 
 /**
  * @fileoverview
- * Registers a language controller for CSS.
+ * Registers a language handler for CSS.
  *
  *
  * To use, include prettify.js and this file in your HTML page.
@@ -87,8 +87,8 @@
 // with "lang-" as in
 //    ['lang-js', /<script>(.*?)<\/script>/]
 // then the token classification step breaks the token into pieces.
-// Group 1 is re-parsed using the language controller for "lang-js", and the
-// surrounding portions are reclassified using the current language controller.
+// Group 1 is re-parsed using the language handler for "lang-js", and the
+// surrounding portions are reclassified using the current language handler.
 // This mechanism gives us both lookahead, lookbehind, and language embedding.
 
 // Shortcut Patterns
@@ -149,7 +149,7 @@ PR['registerLangHandler'](
         ]),
     ['css-kw']);
 // The content of an unquoted URL literal like url(http://foo/img.png) should
-// be colored as string content.  This language controller is used above in the
+// be colored as string content.  This language handler is used above in the
 // URL production to do so.
 PR['registerLangHandler'](
     PR['createSimpleLexer']([],

@@ -46,7 +46,7 @@ function EventEmitter() {}
  *
  * @api public
  * @param {string} name Event name.
- * @param {Function} fn Event controller.
+ * @param {Function} fn Event handler.
  * @return {EventEmitter} Emitter instance.
  */
 EventEmitter.prototype.on = function(name, fn) {
@@ -72,7 +72,7 @@ EventEmitter.prototype.addListener = EventEmitter.prototype.on;
  *
  * @api public
  * @param {string} name Event name.
- * @param {Function} fn Event controller.
+ * @param {Function} fn Event handler.
  * @return {EventEmitter} Emitter instance.
  */
 EventEmitter.prototype.once = function(name, fn) {
@@ -94,7 +94,7 @@ EventEmitter.prototype.once = function(name, fn) {
  *
  * @api public
  * @param {string} name Event name.
- * @param {Function} fn Event controller.
+ * @param {Function} fn Event handler.
  * @return {EventEmitter} Emitter instance.
  */
 EventEmitter.prototype.removeListener = function(name, fn) {
@@ -176,7 +176,7 @@ EventEmitter.prototype.listeners = function(name) {
  *
  * @api public
  * @param {string} name Event name.
- * @return {boolean} true if at least one controller was invoked, else false.
+ * @return {boolean} true if at least one handler was invoked, else false.
  */
 EventEmitter.prototype.emit = function(name) {
   if (!this.$events) {
@@ -9196,7 +9196,7 @@ Readable.prototype.pipe = function(dest, pipeOpts) {
 
   // when the dest drains, it reduces the awaitDrain counter
   // on the source.  This would be more elegant with a .once()
-  // controller in flow(), but adding and removing repeatedly is
+  // handler in flow(), but adding and removing repeatedly is
   // too slow.
   var ondrain = pipeOnDrain(src);
   dest.on('drain', ondrain);
@@ -9244,7 +9244,7 @@ Readable.prototype.pipe = function(dest, pipeOpts) {
     if (EE.listenerCount(dest, 'error') === 0)
       dest.emit('error', er);
   }
-  // This is a brutally ugly hack to make sure that our error controller
+  // This is a brutally ugly hack to make sure that our error handler
   // is attached before any userland ones.  NEVER DO THIS.
   if (!dest._events || !dest._events.error)
     dest.on('error', onerror);
@@ -12283,7 +12283,7 @@ var originalOnerrorHandler = global.onerror;
 
 /**
  * Remove uncaughtException listener.
- * Revert to original onerror controller if previously defined.
+ * Revert to original onerror handler if previously defined.
  */
 
 process.removeListener = function(e, fn){

@@ -16,7 +16,7 @@
 
 /**
  * @fileoverview
- * Registers a language controller for TCL
+ * Registers a language handler for TCL
  *
  *
  * To use, include prettify.js and this file in your HTML page.

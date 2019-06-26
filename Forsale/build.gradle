@@ -23,4 +23,5 @@ dependencies {
 	compile "mysql:mysql-connector-java:8.0.12"
 	runtime files('./src/main/resources/lib/ojdbc6.jar')
 	compile 'org.springframework.boot:spring-boot-devtools'
+	compile 'org.webjars:bootstrap:4.3.1'
 }

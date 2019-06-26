@@ -15,7 +15,7 @@
 
 /**
  * @fileoverview
- * Registers a language controller for LLVM.
+ * Registers a language handler for LLVM.
  * From https://gist.github.com/ndabas/2850418
  *
  *

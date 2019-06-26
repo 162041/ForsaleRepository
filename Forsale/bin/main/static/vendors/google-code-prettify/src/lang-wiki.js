@@ -15,7 +15,7 @@
 
 /**
  * @fileoverview
- * Registers a language controller for Wiki pages.
+ * Registers a language handler for Wiki pages.
  *
  * Based on WikiSyntax at http://code.google.com/p/support/wiki/WikiSyntax
  *

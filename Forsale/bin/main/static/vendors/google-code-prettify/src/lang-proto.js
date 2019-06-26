@@ -15,7 +15,7 @@
 
 /**
  * @fileoverview
- * Registers a language controller for Protocol Buffers as described at
+ * Registers a language handler for Protocol Buffers as described at
  * http://code.google.com/p/protobuf/.
  *
  * Based on the lexical grammar at

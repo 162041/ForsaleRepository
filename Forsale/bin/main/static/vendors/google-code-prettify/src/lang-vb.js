@@ -16,7 +16,7 @@
 
 /**
  * @fileoverview
- * Registers a language controller for various flavors of basic.
+ * Registers a language handler for various flavors of basic.
  *
  *
  * To use, include prettify.js and this file in your HTML page.

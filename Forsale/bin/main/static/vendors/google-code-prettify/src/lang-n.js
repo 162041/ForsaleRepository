@@ -15,7 +15,7 @@
 
 /**
  * @fileoverview
- * Registers a language controller for the Nemerle language.
+ * Registers a language handler for the Nemerle language.
  * http://nemerle.org
  * @author Zimin A.V.
  */

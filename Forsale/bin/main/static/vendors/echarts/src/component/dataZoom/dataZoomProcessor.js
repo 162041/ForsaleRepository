@@ -9,7 +9,7 @@ define(function (require) {
 
         ecModel.eachComponent('dataZoom', function (dataZoomModel) {
             // We calculate window and reset axis here but not in model
-            // init stage and not after action dispatch controller, because
+            // init stage and not after action dispatch handler, because
             // reset should be called after seriesData.restoreData.
             dataZoomModel.eachTargetAxis(resetSingleAxis);
 

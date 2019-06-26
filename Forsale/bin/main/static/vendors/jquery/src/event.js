@@ -111,19 +111,19 @@ jQuery.event = {
 			return;
 		}
 
-		// Caller can pass in an object of custom data in lieu of the controller
-		if ( handler.controller ) {
+		// Caller can pass in an object of custom data in lieu of the handler
+		if ( handler.handler ) {
 			handleObjIn = handler;
-			handler = handleObjIn.controller;
+			handler = handleObjIn.handler;
 			selector = handleObjIn.selector;
 		}
 
-		// Make sure that the controller has a unique ID, used to find/remove it later
+		// Make sure that the handler has a unique ID, used to find/remove it later
 		if ( !handler.guid ) {
 			handler.guid = jQuery.guid++;
 		}
 
-		// Init the element's event structure and main controller, if this is the first
+		// Init the element's event structure and main handler, if this is the first
 		if ( !( events = elemData.events ) ) {
 			events = elemData.events = {};
 		}
@@ -171,12 +171,12 @@ jQuery.event = {
 				namespace: namespaces.join( "." )
 			}, handleObjIn );
 
-			// Init the event controller queue if we're the first
+			// Init the event handler queue if we're the first
 			if ( !( handlers = events[ type ] ) ) {
 				handlers = events[ type ] = [];
 				handlers.delegateCount = 0;
 
-				// Only use addEventListener if the special events controller returns false
+				// Only use addEventListener if the special events handler returns false
 				if ( !special.setup ||
 					special.setup.call( elem, data, namespaces, eventHandle ) === false ) {
 
@@ -194,7 +194,7 @@ jQuery.event = {
 				}
 			}
 
-			// Add to the element's controller list, delegates in front
+			// Add to the element's handler list, delegates in front
 			if ( selector ) {
 				handlers.splice( handlers.delegateCount++, 0, handleObj );
 			} else {
@@ -262,7 +262,7 @@ jQuery.event = {
 				}
 			}
 
-			// Remove generic event controller if we removed something and no more handlers exist
+			// Remove generic event handler if we removed something and no more handlers exist
 			// (avoids potential for endless recursion during removal of special event handlers)
 			if ( origCount && !handlers.length ) {
 				if ( !special.teardown ||
@@ -321,7 +321,7 @@ jQuery.event = {
 					event.data = handleObj.data;
 
 					ret = ( ( jQuery.event.special[ handleObj.origType ] || {} ).handle ||
-						handleObj.controller ).apply( matched.elem, args );
+						handleObj.handler ).apply( matched.elem, args );
 
 					if ( ret !== undefined ) {
 						if ( ( event.result = ret ) === false ) {
@@ -560,7 +560,7 @@ jQuery.Event = function( src, props ) {
 		this.type = src.type;
 
 		// Events bubbling up the document may have been marked as prevented
-		// by a controller lower down the tree; reflect the correct value.
+		// by a handler lower down the tree; reflect the correct value.
 		this.isDefaultPrevented = src.defaultPrevented ||
 				src.defaultPrevented === undefined &&
 
@@ -650,11 +650,11 @@ jQuery.each( {
 				related = event.relatedTarget,
 				handleObj = event.handleObj;
 
-			// For mouseenter/leave call the controller if related is outside the target.
+			// For mouseenter/leave call the handler if related is outside the target.
 			// NB: No relatedTarget if the mouse left/entered the browser window
 			if ( !related || ( related !== target && !jQuery.contains( target, related ) ) ) {
 				event.type = handleObj.origType;
-				ret = handleObj.controller.apply( this, arguments );
+				ret = handleObj.handler.apply( this, arguments );
 				event.type = fix;
 			}
 			return ret;
@@ -680,7 +680,7 @@ jQuery.fn.extend( {
 					handleObj.origType + "." + handleObj.namespace :
 					handleObj.origType,
 				handleObj.selector,
-				handleObj.controller
+				handleObj.handler
 			);
 			return this;
 		}

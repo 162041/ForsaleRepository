@@ -16,7 +16,7 @@
 
 /**
  * @fileoverview
- * Registers a language controller for Common Lisp and related languages.
+ * Registers a language handler for Common Lisp and related languages.
  *
  *
  * To use, include prettify.js and this file in your HTML page.

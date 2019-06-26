@@ -16,7 +16,7 @@
 
 /**
  * @fileoverview
- * Registers a language controller for the Go language..
+ * Registers a language handler for the Go language..
  * <p>
  * Based on the lexical grammar at 
  * http://golang.org/doc/go_spec.html#Lexical_elements

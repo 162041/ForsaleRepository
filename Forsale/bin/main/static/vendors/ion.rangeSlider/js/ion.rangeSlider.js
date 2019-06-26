@@ -545,7 +545,7 @@
         },
 
         /**
-         * Determine which controller has a priority
+         * Determine which handler has a priority
          * works only for double slider type
          */
         setTopHandler: function () {
@@ -563,7 +563,7 @@
 
         /**
          * Determine which handles was clicked last
-         * and which controller should have hover effect
+         * and which handler should have hover effect
          *
          * @param target {String}
          */

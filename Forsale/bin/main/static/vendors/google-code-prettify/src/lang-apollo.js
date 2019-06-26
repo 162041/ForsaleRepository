@@ -15,7 +15,7 @@
 
 /**
  * @fileoverview
- * Registers a language controller for the AGC/AEA Assembly Language as described
+ * Registers a language handler for the AGC/AEA Assembly Language as described
  * at http://virtualagc.googlecode.com
  * <p>
  * This file could be used by goodle code to allow syntax highlight for

@@ -176,7 +176,7 @@ $.extend( Responsive.prototype, {
 			}
 		} );
 
-		// Destroy event controller
+		// Destroy event handler
 		dt.on( 'destroy.dtr', function () {
 			dt.off( '.dtr' );
 			$( dt.table().body() ).off( '.dtr' );
@@ -200,7 +200,7 @@ $.extend( Responsive.prototype, {
 		this._classLogic();
 		this._resizeAuto();
 
-		// Details controller
+		// Details handler
 		var details = this.c.details;
 
 		if ( details.type !== false ) {
@@ -557,7 +557,7 @@ $.extend( Responsive.prototype, {
 
 
 	/**
-	 * Initialisation for the details controller
+	 * Initialisation for the details handler
 	 *
 	 * @private
 	 */
@@ -588,7 +588,7 @@ $.extend( Responsive.prototype, {
 		var target   = details.target;
 		var selector = typeof target === 'string' ? target : 'td, th';
 
-		// Click controller to show / hide the details rows when they are available
+		// Click handler to show / hide the details rows when they are available
 		$( dt.table().body() )
 			.on( 'click.dtr mousedown.dtr mouseup.dtr', selector, function (e) {
 				// If the table is not collapsed (i.e. there is no hidden columns)
@@ -603,7 +603,7 @@ $.extend( Responsive.prototype, {
 				}
 
 				// For column index, we determine if we should act or not in the
-				// controller - otherwise it is already okay
+				// handler - otherwise it is already okay
 				if ( typeof target === 'number' ) {
 					var targetIdx = target < 0 ?
 						dt.columns().eq(0).length + target :

@@ -145,7 +145,7 @@ define(function (require) {
             if (!self.enterable) {
                 // Try trigger zrender event to avoid mouse
                 // in and out shape too frequently
-                var handler = zr.controller;
+                var handler = zr.handler;
                 eventUtil.normalizeEvent(container, e);
                 handler.dispatch('mousemove', e);
             }

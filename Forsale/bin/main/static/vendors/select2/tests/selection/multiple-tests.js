@@ -139,11 +139,11 @@ test('clear button respects the disabled state', function (assert) {
     'The remove icon is displayed for the selection'
   );
 
-  // Set up the unselect controller
+  // Set up the unselect handler
   selection.on('unselect', function (params) {
-    assert.ok(false, 'The unselect controller should not be triggered');
+    assert.ok(false, 'The unselect handler should not be triggered');
   });
 
-  // Trigger the controller for the remove icon
+  // Trigger the handler for the remove icon
   $remove.trigger('click');
 });

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.s162041.Forsale.dao.UserDao">
+    <resultMap id="buyerMapper" type="Buyer">
+        <id property="bid" column="BID"/>
+        <result property="bname" column="Bname"/>
+        <result property="bpassword" column="Bpassword"/>
+        <result property="btel" column="Btel"/>
+
+    </resultMap>
+
+    <select id="getBuyerList" resultMap="buyerMapper" >
+        select * from buyer
+    </select>
+    <delete id="deleteBuyerById" >
+        delete  from buyer where bid=#{id}
+    </delete>
+
+</mapper>

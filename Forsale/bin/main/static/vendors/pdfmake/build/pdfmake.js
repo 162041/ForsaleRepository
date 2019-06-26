@@ -19880,7 +19880,7 @@
 
 	  // when the dest drains, it reduces the awaitDrain counter
 	  // on the source.  This would be more elegant with a .once()
-	  // controller in flow(), but adding and removing repeatedly is
+	  // handler in flow(), but adding and removing repeatedly is
 	  // too slow.
 	  var ondrain = pipeOnDrain(src);
 	  dest.on('drain', ondrain);
@@ -19928,7 +19928,7 @@
 	    if (EE.listenerCount(dest, 'error') === 0)
 	      dest.emit('error', er);
 	  }
-	  // This is a brutally ugly hack to make sure that our error controller
+	  // This is a brutally ugly hack to make sure that our error handler
 	  // is attached before any userland ones.  NEVER DO THIS.
 	  if (!dest._events || !dest._events.error)
 	    dest.on('error', onerror);

@@ -37,7 +37,7 @@ function InputEvent() {
 
     behavesOk: evt => {
       if (this.isNativeEvent(evt)) {
-        $(document) // Simply unbinds the testing controller
+        $(document) // Simply unbinds the testing handler
           .off('input.inputevent', evt.data.selector, this.behavesOk)
           .off('change.inputevent', evt.data.selector, this.misbehaves);
       }

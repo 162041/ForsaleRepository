@@ -158,7 +158,7 @@ define(function (require) {
          */
         this._zr = zr;
 
-        // Avoid two roamController bind the same controller
+        // Avoid two roamController bind the same handler
         var bind = zrUtil.bind;
         var mousedownHandler = bind(mousedown, this);
         var mousemoveHandler = bind(mousemove, this);

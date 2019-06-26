@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="icon" th:href="@{images/favicon.ico}" type="image/ico" />
+
+    <title>校园二手平台后台管理</title>
+
+    <!-- Bootstrap -->
+    <link  th:href="@{/vendors/bootstrap/dist/css/bootstrap.min.css}" rel="stylesheet"/>
+    <!-- Font Awesome -->
+    <link th:href="@{/vendors/font-awesome/css/font-awesome.min.css}" rel="stylesheet"/>
+    <!-- NProgress -->
+    <link th:href="@{/vendors/nprogress/nprogress.css}" rel="stylesheet"/>
+    <!-- iCheck -->
+    <link  th:href="@{/vendors/iCheck/skins/flat/green.css}" rel="stylesheet"/>
+	
+    <!-- bootstrap-progressbar -->
+    <link th:href="@{/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css}" rel="stylesheet"/>
+    <!-- JQVMap -->
+    <link th:href="@{/vendors/jqvmap/dist/jqvmap.min.css}" rel="stylesheet"/>
+    <!-- bootstrap-daterangepicker -->
+    <link th:href="@{/vendors/bootstrap-daterangepicker/daterangepicker.css}" rel="stylesheet"/>
+
+    <!-- Custom Theme Style -->
+    <link th:href="@{/build/css/custom.min.css}" rel="stylesheet"/>
+  </head>
+
+  <body class="nav-md">
+  <div class="container body">
+    <div class="main_container">
+      <div class="col-md-3 left_col">
+        <div class="left_col scroll-view">
+          <div class="navbar nav_title" style="border: 0;">
+            <a href="/Adminlogin" class="site_title"><i class="fa fa-paw"></i> <span>校园二手平台后台</span></a>
+          </div>
+
+          <div class="clearfix"></div>
+
+          <!-- menu profile quick info -->
+          <div class="profile clearfix">
+            <div class="profile_pic">
+            <input type="hidden" name="aname" />
+              <img src="../images/img.jpg" alt="..." class="img-circle profile_img">
+            </div>
+            <div th:object=" ${session. admin}"  class="profile_info">
+              <span>Welcome,</span>
+              <h2 th:text="*{aname}"></h2>
+            </div>
+          </div>
+          <!-- /menu profile quick info -->
+
+          <br />
+          <input type="hidden" value=""/>
+          <!-- sidebar menu -->
+          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section">
+              <h3>General</h3>
+              <ul class="nav side-menu">
+                <li><a><i class="fa fa-home"></i> 用户管理 <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li><a href="/user/buyer">买家管理</a></li>
+                    <li><a href="/user/seller">卖家管理</a></li>
+                    <li><a href="/services">客服管理</a></li>
+                  </ul>
+                </li>
+                <li th:object=" ${session. admin}"><a><i class="fa fa-edit"></i>其他事务<span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li><a href="/orders">订单处理</a></li>
+                    <li><a href="/showEdit">修改个人信息</a></li>
+                    <li><a href="/getAnnounceList">公告管理</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- top navigation -->
+      <div class="top_nav">
+        <div class="nav_menu">
+          <nav>
+            <div class="nav toggle">
+              <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <!-- /top navigation -->
+
+      <!-- page content -->
+      <div class="right_col" role="main">
+      <div class="col-md-12">
+        <div class="col-middle">
+          <div class="text-center text-center">
+            <h1 class="error-number">二手平台管理</h1>
+            <h2 >欢迎来到二手平台后台管理</h2>
+            <div class="mid_center">
+
+              <form>
+                <div class="col-xs-12 form-group pull-right top_search">
+                  <div class="input-group">
+
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <!-- footer content -->
+      <footer>
+        <div class="pull-right">
+          Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+        </div>
+        <div class="clearfix"></div>
+      </footer>
+      <!-- /footer content -->
+    </div>
+  </div>
+
+  <!-- jQuery -->
+  <script src="../vendors/jquery/dist/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- FastClick -->
+  <script src="../vendors/fastclick/lib/fastclick.js"></script>
+  <!-- NProgress -->
+  <script src="../vendors/nprogress/nprogress.js"></script>
+  <!-- iCheck -->
+  <script src="../vendors/iCheck/icheck.min.js"></script>
+  <!-- Datatables -->
+  <script src="../vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+  <script src="../vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+  <script src="../vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+  <script src="../vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+  <script src="../vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+  <script src="../vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+  <script src="../vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+  <script src="../vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+  <script src="../vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+  <script src="../vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+  <script src="../vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+  <script src="../vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+  <script src="../vendors/jszip/dist/jszip.min.js"></script>
+  <script src="../vendors/pdfmake/build/pdfmake.min.js"></script>
+  <script src="../vendors/pdfmake/build/vfs_fonts.js"></script>
+
+  <!-- Custom Theme Scripts -->
+  <script src="../build/js/custom.min.js"></script>
+
+  </body>
+</html>

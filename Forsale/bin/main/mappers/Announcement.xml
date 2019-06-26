@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.s162041.Forsale.dao.AdminDao">
+
+    <resultMap id="announcement" type="Announcement">
+        <id property="nid" column="NID"/>
+        <result property="aname" column="Aname"/>
+        <result property="ncontent" column="Ncontent"/>
+        <result property="nstate" column="Nstate"/>
+        <result property="ndate" column="Ndate"/>
+    </resultMap>
+
+    <select id="getAnnounceList" resultMap="announcement">
+        select * from announcement
+    </select>
+    <update id="updateAnnounceById">
+        update announcement set aname=#{aname}, ncontent=#{ncontent},nstate=#{nstate},ndate=#{ndate} where nid =#{nid}
+    </update>
+
+    <insert id="saveAnnouncement">
+          insert into announcement (nid,aname,ncontent,nstate,ndate) VALUES ((select uuid()),#{aname},#{ncontent},#{nstate},#{ndate})
+    </insert>
+    <select id="getAnnounceListById" resultMap="announcement">
+        select * from announcement where nid =#{nid}
+    </select>
+    <delete id="deleteAnnouncement">
+        delete from announcement where nid =#{nid}
+    </delete>
+
+
+</mapper>

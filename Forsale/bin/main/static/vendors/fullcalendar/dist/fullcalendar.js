@@ -419,7 +419,7 @@ function preventDefault(ev) {
 }
 
 
-// attach a controller to get called when ANY scroll action happens on the page.
+// attach a handler to get called when ANY scroll action happens on the page.
 // this was impossible to do with normal on/off because 'scroll' doesn't bubble.
 // http://stackoverflow.com/a/32954565/96342
 // returns `true` on success.
@@ -1885,7 +1885,7 @@ var EmitterMixin = FC.EmitterMixin = {
 	_prepareIntercept: function(handler) {
 		// handlers are always called with an "event" object as their first param.
 		// sneak the `this` context and arguments into the extra parameter object
-		// and forward them on to the original controller.
+		// and forward them on to the original handler.
 		var intercept = function(ev, extra) {
 			return handler.apply(
 				extra.context || this,
@@ -1896,7 +1896,7 @@ var EmitterMixin = FC.EmitterMixin = {
 		// mimick jQuery's internal "proxy" system (risky, I know)
 		// causing all functions with the same .guid to appear to be the same.
 		// https://github.com/jquery/jquery/blob/2.2.4/src/core.js#L448
-		// this is needed for calling .off with the original non-intercept controller.
+		// this is needed for calling .off with the original non-intercept handler.
 		if (!handler.guid) {
 			handler.guid = $.guid++;
 		}
@@ -2604,7 +2604,7 @@ var DragListener = FC.DragListener = Class.extend(ListenerMixin, MouseIgnorerMix
 			// listen to ALL scroll actions on the page
 			if (
 				!bindAnyScroll(this.handleTouchScrollProxy) && // hopefully this works and short-circuits the rest
-				this.scrollEl // otherwise, attach a single controller to this
+				this.scrollEl // otherwise, attach a single handler to this
 			) {
 				this.listenTo(this.scrollEl, 'scroll', this.handleTouchScroll);
 			}
@@ -2822,7 +2822,7 @@ DragListener.mixin({
 	destroyAutoScroll: function() {
 		this.endAutoScroll(); // kill any animation loop
 
-		// remove the scroll controller if there is a scrollEl
+		// remove the scroll handler if there is a scrollEl
 		if (this.isAutoScroll) {
 			this.stopListeningTo(this.scrollEl, 'scroll'); // will probably get removed by unbindHandlers too :(
 		}
@@ -3574,7 +3574,7 @@ var Grid = FC.Grid = Class.extend(ListenerMixin, MouseIgnorerMixin, {
 	bindDayHandler: function(name, handler) {
 		var _this = this;
 
-		// attach a controller to the grid's root element.
+		// attach a handler to the grid's root element.
 		// jQuery will take care of unregistering them when removeElement gets called.
 		this.el.on(name, function(ev) {
 			if (
@@ -4277,7 +4277,7 @@ Grid.mixin({
 	},
 
 
-	// Executes a controller for any a user-interaction on a segment.
+	// Executes a handler for any a user-interaction on a segment.
 	// Handler gets called with (seg, ev), and with the `this` context of the Grid
 	bindSegHandlerToEl: function(el, name, handler) {
 		var _this = this;
@@ -6535,7 +6535,7 @@ DayGrid.mixin({
 
 	removeSegPopover: function() {
 		if (this.segPopover) {
-			this.segPopover.hide(); // in controller, will call segPopover's removeElement
+			this.segPopover.hide(); // in handler, will call segPopover's removeElement
 		}
 	},
 
@@ -6706,7 +6706,7 @@ DayGrid.mixin({
 
 
 	// Renders an <a> element that represents hidden event element for a cell.
-	// Responsible for attaching click controller as well.
+	// Responsible for attaching click handler as well.
 	renderMoreLink: function(row, col, hiddenSegs) {
 		var _this = this;
 		var view = this.view;
@@ -11037,8 +11037,8 @@ Options binding/triggering system.
 */
 Calendar.mixin({
 
-	// A map of option names to arrays of controller objects. Initialized to {} in Calendar.
-	// Format for a controller object:
+	// A map of option names to arrays of handler objects. Initialized to {} in Calendar.
+	// Format for a handler object:
 	// {
 	//   func // callback function to be called upon change
 	//   names // option names whose values should be given to func
@@ -11064,7 +11064,7 @@ Calendar.mixin({
 		this.triggerOptionHandlerObj(handlerObj);
 	},
 
-	// Puts the given controller object into the internal hash
+	// Puts the given handler object into the internal hash
 	registerOptionHandlerObj: function(optionName, handlerObj) {
 		(this.optionHandlers[optionName] || (this.optionHandlers[optionName] = []))
 			.push(handlerObj);
@@ -11080,7 +11080,7 @@ Calendar.mixin({
 		}
 	},
 
-	// Calls the callback for a specific controller object, passing in the appropriate arguments.
+	// Calls the callback for a specific handler object, passing in the appropriate arguments.
 	triggerOptionHandlerObj: function(handlerObj) {
 		var optionNames = handlerObj.names;
 		var optionValues = [];
@@ -14002,7 +14002,7 @@ var ListViewGrid = Grid.extend({
 		// not clicking on or within an <a> with an href
 		if (!$(ev.target).closest('a[href]').length) {
 			url = seg.event.url;
-			if (url && !ev.isDefaultPrevented()) { // jsEvent not cancelled in controller
+			if (url && !ev.isDefaultPrevented()) { // jsEvent not cancelled in handler
 				window.location.href = url; // simulate link click
 			}
 		}

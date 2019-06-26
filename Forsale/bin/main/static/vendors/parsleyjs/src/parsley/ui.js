@@ -256,7 +256,7 @@ ParsleyUI.Field = {
 
   // Determine which element will have `parsley-error` and `parsley-success` classes
   _manageClassHandler: function () {
-    // An element selector could be passed through DOM with `data-parsley-class-controller=#foo`
+    // An element selector could be passed through DOM with `data-parsley-class-handler=#foo`
     if ('string' === typeof this.options.classHandler && $(this.options.classHandler).length)
       return $(this.options.classHandler);
 

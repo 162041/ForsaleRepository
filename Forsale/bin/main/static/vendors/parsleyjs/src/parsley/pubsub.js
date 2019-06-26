@@ -8,7 +8,7 @@ var deprecated = function () {
   ParsleyUtils.warnOnce("Parsley's pubsub module is deprecated; use the 'on' and 'off' methods on parsley instances or window.Parsley");
 };
 
-// Returns an event controller that calls `fn` with the arguments it expects
+// Returns an event handler that calls `fn` with the arguments it expects
 function adapt(fn, context) {
   // Store to allow unbinding
   if (!fn.parsleyAdaptedCallback) {

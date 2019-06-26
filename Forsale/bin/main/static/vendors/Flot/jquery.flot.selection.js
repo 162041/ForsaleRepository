@@ -30,7 +30,7 @@ minute, but rather 1 pixel. Note also that setting "minSize" to 0 will prevent
 dragging.
 
 When selection support is enabled, a "plotselected" event will be emitted on
-the DOM element you passed into the plot function. The event controller gets a
+the DOM element you passed into the plot function. The event handler gets a
 parameter with the ranges selected on the axes, like this:
 
 	placeholder.bind( "plotselected", function( event, ranges ) {
@@ -61,7 +61,7 @@ The plugin allso adds the following methods to the plot object:
 	setSelection({ xaxis: { from: 0, to: 10 }, yaxis: { from: 40, to: 60 } });
 
   setSelection will trigger the "plotselected" event when called. If you don't
-  want that to happen, e.g. if you're inside a "plotselected" controller, pass
+  want that to happen, e.g. if you're inside a "plotselected" handler, pass
   true as the second parameter. If you are using multiple axes, you can
   specify the ranges on any of those, e.g. as x2axis/x3axis/... instead of
   xaxis, the plugin picks the first one it sees.
@@ -125,7 +125,7 @@ The plugin allso adds the following methods to the plot object:
             selection.active = true;
 
             // this is a bit silly, but we have to use a closure to be
-            // able to whack the same controller again
+            // able to whack the same handler again
             mouseUpHandler = function (e) { onMouseUp(e); };
             
             $(document).one("mouseup", mouseUpHandler);

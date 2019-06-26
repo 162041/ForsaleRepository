@@ -398,7 +398,7 @@ var requirejs, require, define;
         //Support require(['a'])
         callback = callback || function () {};
 
-        //If relName is a function, it is an errback controller,
+        //If relName is a function, it is an errback handler,
         //so remove it.
         if (typeof relName === 'function') {
             relName = forceSync;

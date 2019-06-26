@@ -16,7 +16,7 @@
 
 /**
  * @fileoverview
- * Registers a language controller for MUMPS.
+ * Registers a language handler for MUMPS.
  *
  *
  * To use, include prettify.js and this file in your HTML page.

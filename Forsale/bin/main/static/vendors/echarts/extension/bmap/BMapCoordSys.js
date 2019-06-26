@@ -93,7 +93,7 @@ define(function (require) {
                 var bmapRoot = root.querySelector('.ec-extension-bmap');
                 if (bmapRoot) {
                     // Reset viewport left and top, which will be changed
-                    // in moving controller in BMapView
+                    // in moving handler in BMapView
                     viewportRoot.style.left = '0px';
                     viewportRoot.style.top = '0px';
                     root.removeChild(bmapRoot);

@@ -353,7 +353,7 @@ function assert( fn ) {
 }
 
 /**
- * Adds the same controller for all of the specified attrs
+ * Adds the same handler for all of the specified attrs
  * @param {String} attrs Pipe-separated list of attributes
  * @param {Function} handler The method that will be applied
  */
